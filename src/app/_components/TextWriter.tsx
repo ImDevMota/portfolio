@@ -1,0 +1,23 @@
+"use client";
+
+import { Typewriter } from "react-simple-typewriter";
+
+export default function TypewriterText() {
+  return (
+    <div className=" flex items-center text-2xl font-cascadia justify-center bg-gray-900">
+      <Typewriter
+        words={[
+          "Technolohy Enthusiast",
+          "Web Developer",
+          "Full-Stack Developer",
+        ]}
+        loop={0} // 0 = infinito
+        cursor
+        cursorStyle={<span className="text-red-500 font-cascadia">|</span>}
+        typeSpeed={70}
+        deleteSpeed={50}
+        delaySpeed={1000}
+      />
+    </div>
+  );
+}
