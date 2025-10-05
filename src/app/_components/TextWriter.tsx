@@ -4,7 +4,7 @@ import { Typewriter } from "react-simple-typewriter";
 
 export default function TypewriterText() {
   return (
-    <div className=" flex items-center text-2xl font-cascadia justify-center bg-gray-900">
+    <div className=" flex text-2xl font-cascadia">
       <Typewriter
         words={[
           "Technolohy Enthusiast",

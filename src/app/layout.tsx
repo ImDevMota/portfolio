@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import localFont from "next/font/local";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,7 +27,16 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <div className="relative w-full min-h-screen overflow-hidden">
+          {/* Blurs fixos em vermelho dark */}
+          <div className="fixed top-55 left-80 w-35 h-35 bg-red-700/40 rounded-full blur-2xl "></div>
+          <div className="fixed top-50 left-110 w-55 h-45 bg-red-600/30 rounded-full blur-2xl "></div>
+          <div className="fixed top-0 -left-30 w-100 h-100 bg-red-600/20 rounded-full blur-2xl "></div>
+          <div className="fixed top-5 left-110 w-70 h-120 opacity-55 bg-red-600/20 rounded-full blur-3xl "></div>
+
+          {/* Conteúdo das páginas */}
+          <main className="relative z-10">{children}</main>
+        </div>
       </body>
     </html>
   );

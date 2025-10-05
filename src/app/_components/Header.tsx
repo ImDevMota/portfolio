@@ -1,7 +1,7 @@
 export default function Header() {
   return (
     <header className="flex flex-row justify-center items-center ">
-      <div className="flex justify-between w-[70%] mt-4">
+      <div className="flex justify-between w-[60%] mt-4">
         <a
           href="#"
           className="font-bold text-xl bg-gradient-to-b from-red-600 to-red-950 bg-clip-text text-transparent"
