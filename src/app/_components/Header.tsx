@@ -1,14 +1,29 @@
 export default function Header() {
   return (
-    <header>
-      <h3>Mota Dev</h3>
+    <header className="flex flex-row justify-center items-center ">
+      <div className="flex justify-between w-[70%] mt-4">
+        <a
+          href="#"
+          className="font-bold text-xl bg-gradient-to-b from-red-600 to-red-950 bg-clip-text text-transparent"
+        >
+          Mota Dev
+        </a>
 
-      <nav>
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Portfolio</a>
-        <a href="#">Contact</a>
-      </nav>
+        <nav className="flex flex-row gap-x-[2rem]">
+          <a href="#" className="hover:border-b-2 hover:border-red-700">
+            Home
+          </a>
+          <a href="#" className="hover:border-b-2 hover:border-red-700">
+            About
+          </a>
+          <a href="#" className="hover:border-b-2 hover:border-red-700">
+            Portfolio
+          </a>
+          <a href="#" className="hover:border-b-2 hover:border-red-700">
+            Contact
+          </a>
+        </nav>
+      </div>
     </header>
   );
 }
