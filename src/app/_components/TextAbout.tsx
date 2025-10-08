@@ -20,7 +20,7 @@ export default function TextAbout() {
   });
 
   return (
-    <section className="flex flex-col items-center justify-center bg-gray-100">
+    <section className="flex flex-col items-center justify-center">
       <motion.div
         ref={ref}
         initial={{ opacity: 0, x: 100 }}
@@ -37,7 +37,7 @@ export default function TextAbout() {
                 transition: { duration: 0.6, ease: "easeIn" },
               }
         }
-        className="p-8 bg-white rounded-2xl shadow-lg text-center"
+        className="p-8 rounded-2xl shadow-lg text-center"
       >
         <h1 className="text-3xl font-bold">
           Fade in/out controlado pelo scroll 🎯

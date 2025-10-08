@@ -10,11 +10,11 @@ import {
 export default function Hero() {
   return (
     <section className="flex items-center justify-center">
-      <div className="flex flex-row w-[60%]  items-center justify-between mt-[10rem]">
+      <div className="flex flex-row w-[60%]  items-center justify-between mt-[16rem]">
         <div>
           <div className="flex flex-col">
-            <h1 className="text-6xl font-bold mb-4">
-              I'm <span className="text-red-600">Mota</span>
+            <h1 className="text-7xl font-bold mb-4">
+              I'm <span className="text-red-700">Mota</span>
               <br /> Developer
             </h1>
 

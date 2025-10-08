@@ -29,10 +29,10 @@ export default function RootLayout({
       >
         <div className="relative w-full min-h-screen overflow-hidden">
           {/* Blurs fixos em vermelho dark */}
-          <div className="fixed top-55 left-80 w-35 h-35 bg-red-700/40 rounded-full blur-2xl "></div>
-          <div className="fixed top-50 left-110 w-55 h-45 bg-red-600/30 rounded-full blur-2xl "></div>
-          <div className="fixed top-0 -left-30 w-100 h-100 bg-red-600/20 rounded-full blur-2xl "></div>
-          <div className="fixed top-5 left-110 w-70 h-120 opacity-55 bg-red-600/20 rounded-full blur-3xl "></div>
+          <div className="fixed top-55 left-75 w-60 h-60 bg-red-700/40 rounded-full blur-3xl "></div>
+          <div className="fixed top-40 left-120 w-95 h-80 opactiy-55 bg-red-600/30 rounded-full blur-3xl "></div>
+          <div className="fixed top-0 -left-30 w-92 h-120 bg-red-600/20 rounded-full blur-3xl "></div>
+          <div className="fixed top-20 left-120 w-70 h-100 opacity-20 bg-red-600/20 rounded-full blur-3xl "></div>
 
           {/* Conteúdo das páginas */}
           <main className="relative z-10">{children}</main>
