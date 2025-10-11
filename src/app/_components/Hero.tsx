@@ -22,7 +22,6 @@ export default function Hero() {
 
             <p className="text-xl font-inter font-[100] mt-[1.3rem]">
               Transforming ideas into websites, automations and intelligent{" "}
-              <br />
               digital solutions.
             </p>
           </div>
@@ -44,7 +43,7 @@ export default function Hero() {
             </a>
           </div>
 
-          <div className="flex flex-row gap-4 bg-[#0a0a0a] mt-[1.7rem] rounded-2xl w-fit">
+          <div className="flex flex-row gap-4 ransparent  mt-[1.7rem] rounded-2xl w-fit">
             {/* GitHub */}
             <div className="relative group">
               <div className="absolute -inset-[1px] bg-gradient-to-r from-red-600 via-red-500 to-red-700 rounded-[0.7rem] opacity-40 group-hover:opacity-80 blur-[0.3rem] transition duration-500"></div>
