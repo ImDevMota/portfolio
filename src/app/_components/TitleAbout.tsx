@@ -19,7 +19,7 @@ export default function TitleAbout() {
   });
 
   return (
-    <section className="flex flex-col items-center justify-center mt-[21rem]">
+    <section className="flex flex-col items-center justify-center">
       <motion.div
         initial={{ opacity: 0, y: 150 }} // começa invisível e 100px abaixo
         animate={
@@ -37,7 +37,7 @@ export default function TitleAbout() {
         }
         className="text-center p-6  rounded-2xl shadow-lg"
       >
-        <h1 className="text-5xl font-bold bg-gradient-to-r from-red-700 to-red-700 text-transparent bg-clip-text">
+        <h1 className="text-[48px] font-bold bg-gradient-to-r from-red-700 to-red-700 text-transparent bg-clip-text">
           About Me
         </h1>
       </motion.div>

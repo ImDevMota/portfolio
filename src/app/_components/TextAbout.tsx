@@ -20,7 +20,7 @@ export default function TextAbout() {
   });
 
   return (
-    <section className="flex flex-col items-center justify-center">
+    <div className="flex flex-col">
       <motion.div
         ref={ref}
         initial={{ opacity: 0, x: 100 }}
@@ -37,20 +37,41 @@ export default function TextAbout() {
                 transition: { duration: 0.6, ease: "easeIn" },
               }
         }
-        className="p-8 rounded-2xl shadow-lg text-center"
+        className="rounded-2xl shadow-lg flex flex-col"
       >
-        <h1 className="text-3xl font-bold">
-          Fade in/out controlado pelo scroll 🎯
-        </h1>
-        <p className="text-gray-600 mt-2">
-          Aparece quando o scroll está entre {triggerStart}px
+        <p className="text-[42px] font-bold ">
+          <span className="text-red-500">Hello, I'm</span> Thiago Mota
         </p>
-      </motion.div>
+        <p className="text-[18px] mt-1 text-white text-justify leading-[2rem]">
+          Currently, I am a Full-stack Developer and Systems Analysis and
+          Development Technologist. I also work as a Manager and Developer in
+          the technology community
+          <a href="#" className="text-amber-300 font-bold">
+            {" "}
+            CODA.CE
+          </a>
+          . I am fascinated by technology and am always seeking to learn more in
+          various areas. I am very interested in becoming a Computer Scientist
+          in the near future and being part of teams that bring innovations and
+          discoveries.
+        </p>
 
-      <div>
-        <button>Download CV</button>
-        <a href="">Projects</a>
-      </div>
-    </section>
+        <div className="backdrop-blur-md bg-[#0a0a0a]/70 border-2 mt-[1.5rem] border-white/50 rounded-xl px-6 py-2 text-center">
+          <p className="text-white font-medium text-sm">
+            “As long as we remain conscious, technology will always be our
+            ally.”
+          </p>
+        </div>
+
+        <div className="mt-[2.4rem] flex flex-row gap-x-2">
+          <a
+            href="#"
+            className="py-3 px-9 rounded-md bg-gradient-to-r flex flex-row gap-x-2 items-center from-red-600 to-red-950"
+          >
+            Download CV
+          </a>
+        </div>
+      </motion.div>
+    </div>
   );
 }

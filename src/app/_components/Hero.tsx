@@ -29,14 +29,14 @@ export default function Hero() {
           <div className="flex flex-row gap-x-2 mt-[1.8rem]">
             <a
               href="#"
-              className="py-2 px-11 rounded-md bg-gradient-to-r flex flex-row gap-x-2 items-center from-red-600 to-red-950"
+              className="py-3 px-11 rounded-md bg-gradient-to-r flex flex-row gap-x-2 items-center from-red-600 to-red-950"
             >
               Projects
               <FaCode />
             </a>
             <a
               href="#"
-              className="py-2 px-11 rounded-md border-1 border-red-950 flex flex-row gap-x-2 items-center"
+              className="py-3 px-11 rounded-md border-1 border-red-950 flex flex-row gap-x-2 items-center"
             >
               Contact
               <FaEnvelope />
