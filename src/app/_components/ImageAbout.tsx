@@ -9,7 +9,7 @@ export default function ImageAbout() {
   const [visible, setVisible] = useState(false);
 
   // Define o ponto de ativação (ajuste conforme seu layout)
-  const triggerStart = 230; // px do topo da página
+  const triggerStart = 400; // px do topo da página
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     if (latest > triggerStart) {
@@ -29,7 +29,7 @@ export default function ImageAbout() {
             ? {
                 opacity: 1,
                 x: 0,
-                transition: { duration: 0.7, ease: "easeOut" },
+                transition: { duration: 0.8, ease: "easeOut" },
               }
             : {
                 opacity: 0,
@@ -42,7 +42,7 @@ export default function ImageAbout() {
         <img
           src="./about.jpg"
           alt=""
-          className="w-[170rem] h-[26rem] rounded-xl"
+          className="w-[190rem] h-[27rem] rounded-xl"
         />
       </motion.div>
     </div>

@@ -8,7 +8,7 @@ export default function SubtitleAbout() {
   const [visible, setVisible] = useState(false);
 
   // pontos de ativação — ajuste conforme o layout
-  const triggerStart = 80; // onde começa o fade in
+  const triggerStart = 300; // onde começa o fade in
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     if (latest > triggerStart) {
@@ -19,26 +19,28 @@ export default function SubtitleAbout() {
   });
 
   return (
-    <section className="flex flex-col items-center justify-center bg-gray-50">
+    <div className="flex flex-col items-center justify-center">
       <motion.div
-        initial={{ opacity: 0, y: 100 }} // começa invisível e 100px abaixo
+        initial={{ opacity: 0, y: 130 }} // começa invisível e 100px abaixo
         animate={
           visible
             ? {
                 opacity: 1,
                 y: 0,
-                transition: { duration: 0.7, ease: "easeOut" },
+                transition: { duration: 0.8, ease: "easeOut" },
               } // entra (de baixo pra cima)
             : {
                 opacity: 0,
-                y: 100,
-                transition: { duration: 0.6, ease: "easeIn" },
+                y: 130,
+                transition: { duration: 0.7, ease: "easeIn" },
               } // sai (pra baixo)
         }
-        className="text-center p-6 bg-white rounded-2xl shadow-lg"
+        className="text-center rounded-2xl shadow-lg"
       >
-        <h1 className="text-xl font-bold text-gray-900">Subtitulo do about</h1>
+        <p className="text-[17px] font-light text-white/85">
+          Turning technology into meaningful solutions
+        </p>
       </motion.div>
-    </section>
+    </div>
   );
 }

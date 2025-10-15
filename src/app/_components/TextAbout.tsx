@@ -9,7 +9,7 @@ export default function TextAbout() {
   const [visible, setVisible] = useState(false);
 
   // Define o ponto de ativação (ajuste conforme seu layout)
-  const triggerStart = 230; // px do topo da página
+  const triggerStart = 400; // px do topo da página
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     if (latest > triggerStart) {
@@ -29,7 +29,7 @@ export default function TextAbout() {
             ? {
                 opacity: 1,
                 x: 0,
-                transition: { duration: 0.7, ease: "easeOut" },
+                transition: { duration: 0.8, ease: "easeOut" },
               }
             : {
                 opacity: 0,
@@ -42,7 +42,7 @@ export default function TextAbout() {
         <p className="text-[42px] font-bold ">
           <span className="text-red-500">Hello, I'm</span> Thiago Mota
         </p>
-        <p className="text-[18px] mt-1 text-white text-justify leading-[2rem]">
+        <p className="text-[18px] mt-1 text-white/85 text-justify leading-[2rem]">
           Currently, I am a Full-stack Developer and Systems Analysis and
           Development Technologist. I also work as a Manager and Developer in
           the technology community
@@ -56,8 +56,8 @@ export default function TextAbout() {
           discoveries.
         </p>
 
-        <div className="backdrop-blur-md bg-[#0a0a0a]/70 border-2 mt-[1.5rem] border-white/50 rounded-xl px-6 py-2 text-center">
-          <p className="text-white font-medium text-sm">
+        <div className="backdrop-blur-md bg-[#0a0a0a]/90 border-2 mt-[1.3rem] border-white/50 rounded-xl px-6 py-3 text-center">
+          <p className="text-white font-bold text-sm">
             “As long as we remain conscious, technology will always be our
             ally.”
           </p>
@@ -66,7 +66,7 @@ export default function TextAbout() {
         <div className="mt-[2.4rem] flex flex-row gap-x-2">
           <a
             href="#"
-            className="py-3 px-9 rounded-md bg-gradient-to-r flex flex-row gap-x-2 items-center from-red-600 to-red-950"
+            className="py-4 px-9 rounded-md bg-gradient-to-r flex flex-row gap-x-2 items-center from-red-600 to-red-950"
           >
             Download CV
           </a>
