@@ -2,7 +2,7 @@
 
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import { useState } from "react";
-
+// corrigir o recarregar a página para manter o blur quando tiver scrollado
 export default function TitleAbout() {
   const { scrollY } = useScroll();
   const [visible, setVisible] = useState(false);
