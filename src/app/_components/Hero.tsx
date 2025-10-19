@@ -21,7 +21,7 @@ export default function Hero() {
 
   return (
     <section className="flex items-center justify-center">
-      <div className="flex flex-row w-[60%] items-center justify-between mt-[16rem]">
+      <div className="flex flex-row w-[70%] items-center justify-between mt-[16rem]">
         <div>
           <motion.div
             initial={{ opacity: 0, x: -100 }}

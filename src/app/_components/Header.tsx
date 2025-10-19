@@ -21,7 +21,7 @@ export default function Header() {
           : "bg-transparent backdrop-blur-0"
       }`}
     >
-      <div className="flex justify-between w-[60%] ">
+      <div className="flex justify-between w-[70%] ">
         <a
           href="#"
           className="font-bold text-2xl text-red-700 drop-shadow-[0_0_5px_#b91c1c] animate-[pulse_3.5s_infinite]"
