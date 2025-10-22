@@ -77,15 +77,14 @@ export default function NavbarProjects() {
                 transition: { duration: 0.6, ease: "easeIn" },
               } // sai (pra baixo)
         }
-        className="text-center p-10 backdrop-blur-2xl rounded-2xl shadow-lg border-2 mt-[3rem] w-[100%]"
+        className="text-center p-10 backdrop-blur-2xl rounded-2xl shadow-lg border-1 mt-[3rem] w-[100%]"
       >
-        {/* Cards */}
         <div className="flex flex-row items-center justify-around">
           <div>
             <div className="">
               {/* <img src="" alt="" /> */}
               <h3 className="font-bold text-[20px]">Projetos</h3>
-              <p></p>
+              <p>-</p>
               <a href=""></a>
             </div>
           </div>

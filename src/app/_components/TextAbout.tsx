@@ -47,7 +47,6 @@ export default function TextAbout() {
           Development Technologist. I also work as a Manager and Developer in
           the technology community
           <a href="#" className="text-amber-300 font-bold">
-            {" "}
             CODA.CE
           </a>
           . I am fascinated by technology and am always seeking to learn more in
