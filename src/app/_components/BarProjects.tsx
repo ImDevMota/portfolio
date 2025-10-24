@@ -43,7 +43,7 @@ export default function BarProjects() {
 
             <div className="bg-white/2 rounded-b-md backdrop-blur-xl shadow-lg px-7 py-5">
               <p className="font-bold bg-gradient-to-r from-red-700 to-[#a03030] bg-clip-text text-transparent text-[22px] text-start">
-                SaaS - agendamento de quadras
+                SaaS - Sports Court Scheduling
               </p>
 
               <p className="text-justify mt-[0.8rem] text-[17px]">
@@ -85,7 +85,7 @@ export default function BarProjects() {
 
             <div className="bg-white/2 rounded-b-md backdrop-blur-xl shadow-lg px-7 py-5">
               <p className="font-bold bg-gradient-to-r from-red-700 to-[#a03030] bg-clip-text text-transparent text-[22px] text-start">
-                E-commerce - Loja Variedades do Côco
+                E-commerce - Store Variedades do Côco
               </p>
 
               <p className="text-justify mt-[0.8rem] text-[17px] ">
