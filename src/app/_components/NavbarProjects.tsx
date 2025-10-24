@@ -77,13 +77,13 @@ export default function NavbarProjects() {
                 transition: { duration: 0.6, ease: "easeIn" },
               } // sai (pra baixo)
         }
-        className="text-center p-10 backdrop-blur-2xl rounded-2xl shadow-lg border-1 mt-[3rem] w-[100%]"
+        className="text-center px-[10rem] py-[1.8rem] bg-white/2 backdrop-blur-2xl rounded-2xl shadow-lg border-[1px] mt-[3rem] w-[100%]"
       >
         <div className="flex flex-row items-center justify-around">
           <div>
             <div className="">
               {/* <img src="" alt="" /> */}
-              <h3 className="font-bold text-[20px]">Projetos</h3>
+              <h3 className="font-bold text-[18px]">Projetos</h3>
               <p>-</p>
               <a href=""></a>
             </div>
@@ -92,7 +92,7 @@ export default function NavbarProjects() {
           <div>
             <div>
               {/* <img src="" alt="" /> */}
-              <h3 className="font-bold text-[20px]">Formação</h3>
+              <h3 className="font-bold text-[18px]">Formação</h3>
               <p></p>
               <a href=""></a>
             </div>
@@ -101,7 +101,7 @@ export default function NavbarProjects() {
           <div>
             <div>
               {/* <img src="" alt="" /> */}
-              <h3 className="font-bold text-[20px]">Tech Stacks</h3>
+              <h3 className="font-bold text-[18px]">Tech Stacks</h3>
               <p></p>
               <a href=""></a>
             </div>

@@ -65,7 +65,7 @@ export default function TextAbout() {
         <div className="mt-[1.4rem] flex flex-row gap-x-2">
           <a
             href="#"
-            className="py-3 px-9 rounded-md bg-gradient-to-r flex flex-row gap-x-2 items-center from-red-600 to-red-950"
+            className="py-3 px-9 rounded-md bg-gradient-to-r font-semibold flex flex-row gap-x-2 items-center from-red-600 to-red-950"
           >
             Download CV
           </a>
