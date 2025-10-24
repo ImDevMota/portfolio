@@ -37,7 +37,7 @@ export default function Hero() {
             className="rounded-2xl shadow-lg"
           >
             <div className="flex flex-col">
-              <h1 className="text-7xl font-bold mb-4">
+              <h1 className="text-7xl  font-bold mb-4">
                 I'm <span className="text-red-700">Mota</span>
                 <br /> Developer
               </h1>

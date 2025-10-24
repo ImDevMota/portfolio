@@ -3,7 +3,7 @@ import Hero from "./_components/Hero";
 import TextAbout from "./_components/TextAbout";
 import TitleAbout from "./_components/TitleAbout";
 import SectionAbout from "./sections/SectionAbout";
-import SectionProjects from "./sections/SectionProjects";
+import SectionPortfolio from "./sections/SectionPortfolio";
 
 export default function Home() {
   return (
@@ -14,7 +14,7 @@ export default function Home() {
 
       <SectionAbout />
 
-      <SectionProjects />
+      <SectionPortfolio />
     </main>
   );
 }

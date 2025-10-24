@@ -3,7 +3,7 @@
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import { useState } from "react";
 
-export default function NavbarProjects() {
+export default function NavbarPortfolio() {
   const { scrollY } = useScroll();
   const [visible, setVisible] = useState(false);
 
@@ -83,7 +83,7 @@ export default function NavbarProjects() {
           <div>
             <div className="">
               {/* <img src="" alt="" /> */}
-              <h3 className="font-bold text-[18px]">Projetos</h3>
+              <h3 className="font-bold text-[18px]">Projects</h3>
               <p>-</p>
               <a href=""></a>
             </div>
@@ -92,7 +92,7 @@ export default function NavbarProjects() {
           <div>
             <div>
               {/* <img src="" alt="" /> */}
-              <h3 className="font-bold text-[18px]">Formação</h3>
+              <h3 className="font-bold text-[18px]">Education</h3>
               <p></p>
               <a href=""></a>
             </div>

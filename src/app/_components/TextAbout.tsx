@@ -45,7 +45,7 @@ export default function TextAbout() {
         <p className="text-[18px] mt-1 text-white/85 text-justify leading-[2rem]">
           Currently, I am a Full-stack Developer and Systems Analysis and
           Development Technologist. I also work as a Manager and Developer in
-          the technology community
+          the technology community{" "}
           <a href="#" className="text-amber-300 font-bold">
             CODA.CE
           </a>

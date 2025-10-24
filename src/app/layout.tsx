@@ -35,7 +35,7 @@ export default function RootLayout({
           <div className="fixed top-20 left-120 w-70 h-100 opacity-20 bg-red-600/20 rounded-full blur-3xl "></div>
 
           {/* Conteúdo das páginas */}
-          <main className="relative z-10">{children}</main>
+          <main className="relative z-10 font-montserrat">{children}</main>
         </div>
       </body>
     </html>
