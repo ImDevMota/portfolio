@@ -1,14 +1,15 @@
 "use client";
 
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 export default function BarProjects() {
+  const ref = useRef(null);
   const { scrollY } = useScroll();
   const [visible, setVisible] = useState(false);
 
-  // pontos de ativação — ajuste conforme o layout
-  const triggerStart = 80; // onde começa o fade in
+  // Define o ponto de ativação (ajuste conforme seu layout)
+  const triggerStart = 1500; // px do topo da página
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     if (latest > triggerStart) {
@@ -21,24 +22,23 @@ export default function BarProjects() {
   return (
     <section className="flex flex-col mt-[2.5rem] items-center justify-center w-[80%]">
       <motion.div
-        initial={{ opacity: 0, y: 100 }} // começa invisível e 100px abaixo
+        ref={ref}
+        initial={{ opacity: 0 }}
         animate={
           visible
             ? {
                 opacity: 1,
-                y: 0,
-                transition: { duration: 0.7, delay: 0.5, ease: "easeOut" },
-              } // entra (de baixo pra cima)
+                transition: { duration: 0.5, delay: 0.5, ease: "easeOut" },
+              } // fade in
             : {
                 opacity: 0,
-                y: 100,
-                transition: { duration: 0.6, ease: "easeIn" },
-              } // sai (pra baixo)
+                transition: { duration: 0.5, ease: "easeIn" },
+              } // fade out
         }
-        className="text-center w-[100%]"
+        className="text-center w-full"
       >
         <div className="flex flex-row items-center justify-between">
-          <div className="backdrop-blur-2xl rounded-md shadow-lg w-[32%] border border-red-600/10">
+          <div className="backdrop-blur-2xl rounded-md shadow-lg w-[32%] border border-red-400/10">
             <img src="./saas.png" alt="" className="rounded-t-md" />
 
             <div className="bg-white/2 rounded-b-md backdrop-blur-xl shadow-lg px-7 py-5">
@@ -80,12 +80,12 @@ export default function BarProjects() {
             </div>
           </div>
 
-          <div className="backdrop-blur-2xl rounded-2xl shadow-lg w-[32%] border border-red-600/10">
+          <div className="backdrop-blur-2xl rounded-2xl shadow-lg w-[32%]  border border-red-400/10">
             <img src="./e-commerce.png" alt="" className="rounded-t-md" />
 
             <div className="bg-white/2 rounded-b-md backdrop-blur-xl shadow-lg px-7 py-5">
               <p className="font-bold bg-gradient-to-r from-red-700 to-[#a03030] bg-clip-text text-transparent text-[22px] text-start">
-                E-commerce - Store Variedades do Côco
+                E-commerce - Variedades do Côco
               </p>
 
               <p className="text-justify mt-[0.8rem] text-[17px] ">
@@ -122,7 +122,7 @@ export default function BarProjects() {
             </div>
           </div>
 
-          <div className=" backdrop-blur-2xl rounded-2xl shadow-lg w-[32%] border border-red-600/10">
+          <div className=" backdrop-blur-2xl rounded-2xl shadow-lg w-[32%] border border-red-400/10">
             <img src="./lp-tipminer.png" alt="" className="rounded-t-md" />
 
             <div className="bg-white/2 rounded-b-md backdrop-blur-xl shadow-lg px-7 py-5">

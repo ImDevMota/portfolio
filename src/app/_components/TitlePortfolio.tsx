@@ -8,7 +8,7 @@ export default function TitlePortfolio() {
   const [visible, setVisible] = useState(false);
 
   // pontos de ativação — ajuste conforme o layout
-  const triggerStart = 30; // onde começa o fade in
+  const triggerStart = 1250; // onde começa o fade in
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     if (latest > triggerStart) {
@@ -19,9 +19,9 @@ export default function TitlePortfolio() {
   });
 
   return (
-    <section className="flex flex-col items-center justify-center bg-gray-50">
+    <div className="flex flex-col items-center justify-cente">
       <motion.div
-        initial={{ opacity: 0, y: 150 }} // começa invisível e 100px abaixo
+        initial={{ opacity: 0, y: 100 }}
         animate={
           visible
             ? {
@@ -31,14 +31,16 @@ export default function TitlePortfolio() {
               } // entra (de baixo pra cima)
             : {
                 opacity: 0,
-                y: 150,
+                y: 100,
                 transition: { duration: 0.6, ease: "easeIn" },
               } // sai (pra baixo)
         }
-        className="text-center p-6 bg-white rounded-2xl shadow-lg"
+        className="text-center"
       >
-        <h1 className="text-4xl font-bold text-gray-900">Portfolio</h1>
+        <p className="text-[48px] font-bold bg-gradient-to-r from-red-700 to-red-700 text-transparent bg-clip-text">
+          Portfolio Showcase
+        </p>
       </motion.div>
-    </section>
+    </div>
   );
 }

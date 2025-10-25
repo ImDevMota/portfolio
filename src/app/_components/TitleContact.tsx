@@ -19,7 +19,7 @@ export default function TitleContact() {
   });
 
   return (
-    <section className="flex flex-col items-center justify-center bg-gray-50">
+    <div className="flex flex-col items-center justify-center bg-gray-50">
       <motion.div
         initial={{ opacity: 0, y: 150 }} // começa invisível e 100px abaixo
         animate={
@@ -39,6 +39,6 @@ export default function TitleContact() {
       >
         <h1 className="text-4xl font-bold text-gray-900">Contact</h1>
       </motion.div>
-    </section>
+    </div>
   );
 }
