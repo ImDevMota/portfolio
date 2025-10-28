@@ -28,7 +28,7 @@ export default function BarProjects() {
           visible
             ? {
                 opacity: 1,
-                transition: { duration: 0.5, delay: 0.5, ease: "easeOut" },
+                transition: { duration: 0.5, delay: 0.2, ease: "easeOut" },
               } // fade in
             : {
                 opacity: 0,
@@ -38,10 +38,10 @@ export default function BarProjects() {
         className="text-center w-full"
       >
         <div className="flex flex-row items-center justify-between">
-          <div className="backdrop-blur-2xl rounded-md shadow-lg w-[32%] border border-red-400/10">
-            <img src="./saas.png" alt="" className="rounded-t-md" />
+          <div className="backdrop-blur-2xl rounded-lg shadow-lg w-[32%] border border-red-400/10">
+            <img src="./saas.png" alt="" className="rounded-t-lg" />
 
-            <div className="bg-white/2 rounded-b-md backdrop-blur-xl shadow-lg px-7 py-5">
+            <div className="bg-white/2 rounded-b-lg backdrop-blur-xl shadow-lg px-7 py-5">
               <p className="font-bold bg-gradient-to-r from-red-700 to-[#a03030] bg-clip-text text-transparent text-[22px] text-start">
                 SaaS - Sports Court Scheduling
               </p>
@@ -56,18 +56,18 @@ export default function BarProjects() {
               <div className="mt-[1rem] flex flex-col gap-y-[0.5rem]">
                 <a
                   href="#"
-                  className="py-[0.5rem] w-full text-sm font-semibold rounded-md bg-gradient-to-r from-red-600 to-red-950 flex items-center justify-center"
+                  className="py-[0.5rem] w-full text-sm font-semibold rounded-lg bg-gradient-to-r from-red-600 to-red-950 flex items-center justify-center"
                 >
                   View Project
                 </a>
 
                 <a
                   href="#"
-                  className="relative inline-flex items-center font-semibold justify-center w-full py-[0.5rem] rounded-md text-sm
+                  className="relative inline-flex items-center font-semibold justify-center w-full py-[0.5rem] rounded-lg text-sm
                 text-red-400 border border-red-600/70 transition-all duration-300
                 hover:text-red-300 hover:border-red-500/80
                   bg-transparent overflow-visible
-                  after:absolute after:inset-0 after:rounded-md after:content-[''] after:pointer-events-none
+                  after:absolute after:inset-0 after:rounded-lg after:content-[''] after:pointer-events-none
                   hover:after:shadow-[0_0_8px_4px_rgba(239,68,68,0.2)]"
                 >
                   <span className="bg-gradient-to-r from-red-700 to-[#a03030] bg-clip-text text-transparent">
@@ -80,10 +80,10 @@ export default function BarProjects() {
             </div>
           </div>
 
-          <div className="backdrop-blur-2xl rounded-2xl shadow-lg w-[32%]  border border-red-400/10">
-            <img src="./e-commerce.png" alt="" className="rounded-t-md" />
+          <div className="backdrop-blur-2xl rounded-lg shadow-lg w-[32%]  border border-red-400/10">
+            <img src="./e-commerce.png" alt="" className="rounded-t-lg" />
 
-            <div className="bg-white/2 rounded-b-md backdrop-blur-xl shadow-lg px-7 py-5">
+            <div className="bg-white/2 rounded-b-lg backdrop-blur-xl shadow-lg px-7 py-5">
               <p className="font-bold bg-gradient-to-r from-red-700 to-[#a03030] bg-clip-text text-transparent text-[22px] text-start">
                 E-commerce - Variedades do Coco
               </p>
@@ -98,18 +98,18 @@ export default function BarProjects() {
               <div className="mt-[1rem] flex flex-col gap-y-[0.5rem]">
                 <a
                   href="#"
-                  className="py-[0.5rem] w-full text-sm font-semibold rounded-md bg-gradient-to-r from-red-600 to-red-950 flex items-center justify-center"
+                  className="py-[0.5rem] w-full text-sm font-semibold rounded-lg bg-gradient-to-r from-red-600 to-red-950 flex items-center justify-center"
                 >
                   View Project
                 </a>
 
                 <a
                   href="#"
-                  className="relative inline-flex items-center font-semibold justify-center w-full py-[0.5rem] rounded-md text-sm
+                  className="relative inline-flex items-center font-semibold justify-center w-full py-[0.5rem] rounded-lg text-sm
                 text-red-400 border border-red-600/70 transition-all duration-300
                 hover:text-red-300 hover:border-red-500/80
                   bg-transparent overflow-visible
-                  after:absolute after:inset-0 after:rounded-md after:content-[''] after:pointer-events-none
+                  after:absolute after:inset-0 after:rounded-lg after:content-[''] after:pointer-events-none
                   hover:after:shadow-[0_0_8px_4px_rgba(239,68,68,0.2)]"
                 >
                   <span className="bg-gradient-to-r from-red-700 to-[#a03030] bg-clip-text text-transparent">
@@ -122,10 +122,10 @@ export default function BarProjects() {
             </div>
           </div>
 
-          <div className=" backdrop-blur-2xl rounded-2xl shadow-lg w-[32%] border border-red-400/10">
-            <img src="./lp-tipminer.png" alt="" className="rounded-t-md" />
+          <div className=" backdrop-blur-2xl rounded-lg shadow-lg w-[32%] border border-red-400/10">
+            <img src="./lp-tipminer.png" alt="" className="rounded-t-lg" />
 
-            <div className="bg-white/2 rounded-b-md backdrop-blur-xl shadow-lg px-7 py-5">
+            <div className="bg-white/2 rounded-b-lg backdrop-blur-xl shadow-lg px-7 py-5">
               <p className="font-bold bg-gradient-to-r from-red-700 to-[#a03030] bg-clip-text text-transparent text-[22px] text-start">
                 Landing Page - Tip Miner
               </p>
@@ -140,18 +140,18 @@ export default function BarProjects() {
               <div className="mt-[1rem] flex flex-col gap-y-[0.5rem]">
                 <a
                   href="#"
-                  className="py-[0.5rem] w-full text-sm font-semibold rounded-md bg-gradient-to-r from-red-600 to-red-950 flex items-center justify-center"
+                  className="py-[0.5rem] w-full text-sm font-semibold rounded-lg bg-gradient-to-r from-red-600 to-red-950 flex items-center justify-center"
                 >
                   View Project
                 </a>
 
                 <a
                   href="#"
-                  className="relative inline-flex items-center font-semibold justify-center w-full py-[0.5rem] rounded-md text-sm
+                  className="relative inline-flex items-center font-semibold justify-center w-full py-[0.5rem] rounded-lg text-sm
                 text-red-400 border border-red-600/70 transition-all duration-300
                 hover:text-red-300 hover:border-red-500/80
                   bg-transparent overflow-visible
-                  after:absolute after:inset-0 after:rounded-md after:content-[''] after:pointer-events-none
+                  after:absolute after:inset-0 after:rounded-lg after:content-[''] after:pointer-events-none
                   hover:after:shadow-[0_0_8px_4px_rgba(239,68,68,0.2)]"
                 >
                   <span className="bg-gradient-to-r from-red-700 to-[#a03030] bg-clip-text text-transparent">
