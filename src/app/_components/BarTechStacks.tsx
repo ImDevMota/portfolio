@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSquareJs } from "@fortawesome/free-brands-svg-icons";
 import { faReact } from "@fortawesome/free-brands-svg-icons";
 import { faWind } from "@fortawesome/free-solid-svg-icons";
-import { SiSpringboot, SiSupabase } from "react-icons/si";
+import { SiSupabase } from "react-icons/si";
 import { SiNextdotjs } from "react-icons/si";
 import { faJava } from "@fortawesome/free-brands-svg-icons";
 import { faNodeJs } from "@fortawesome/free-brands-svg-icons";

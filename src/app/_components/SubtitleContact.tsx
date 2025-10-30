@@ -8,7 +8,7 @@ export default function SubtitleContact() {
   const [visible, setVisible] = useState(false);
 
   // pontos de ativação — ajuste conforme o layout
-  const triggerStart = 30; // onde começa o fade in
+  const triggerStart = 2480; // onde começa o fade in
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     if (latest > triggerStart) {
@@ -19,26 +19,26 @@ export default function SubtitleContact() {
   });
 
   return (
-    <section className="flex flex-col items-center justify-center bg-gray-50">
+    <div className="flex flex-col items-center justify-center mt-2">
       <motion.div
-        initial={{ opacity: 0, y: 150 }} // começa invisível e 100px abaixo
+        initial={{ opacity: 0, y: 100 }} // começa invisível e 100px abaixo
         animate={
           visible
             ? {
                 opacity: 1,
                 y: 0,
-                transition: { duration: 0.7, ease: "easeOut" },
+                transition: { duration: 0.7, delay: 0.4, ease: "easeOut" },
               } // entra (de baixo pra cima)
             : {
                 opacity: 0,
-                y: 150,
+                y: 100,
                 transition: { duration: 0.6, ease: "easeIn" },
               } // sai (pra baixo)
         }
-        className="text-center p-6 bg-white rounded-2xl shadow-lg"
+        className="text-center mt-[-0.5rem] text-[15px]"
       >
-        <h1 className="text-4xl font-bold text-gray-900">Subtitle Contact</h1>
+        <p>Let's connect! Drop me a message about anything.</p>
       </motion.div>
-    </section>
+    </div>
   );
 }

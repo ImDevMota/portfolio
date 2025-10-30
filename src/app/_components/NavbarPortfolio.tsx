@@ -63,7 +63,7 @@ export default function NavbarProjects({
                 transition: { duration: 0.6, ease: "easeIn" },
               } // sai (pra baixo)
         }
-        className="text-center h-[130px] px-[10rem] py-[1.8rem] bg-white/2 backdrop-blur-2xl rounded-2xl shadow-lg border-[1px] mt-[3rem] w-[80%]"
+        className="text-center h-[130px] px-[10rem] py-[1.8rem] bg-white/2 backdrop-blur-2xl rounded-2xl shadow-lg border-white/80 border-[1px] mt-[3rem] w-[80%]"
       >
         <div className="flex flex-row h-[80px] items-center justify-around">
           <div onClick={() => setActiveBar("projects")}>
