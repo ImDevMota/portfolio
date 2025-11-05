@@ -1,15 +1,30 @@
+"use client";
+
+import CardContact from "../_components/CardComment";
 import CardForm from "../_components/CardForm";
+import ContactSwitcher from "../_components/ContactSwitcher";
 import SubtitleContact from "../_components/SubtitleContact";
 import TitleContact from "../_components/TitleContact";
+import { useState } from "react";
+
+export type ActiveCard = "contact" | "comment";
 
 export default function SectionContact() {
+  const [activeCard, setActiveCard] = useState<ActiveCard>("contact");
+
   return (
     <section className="flex items-center justify-center mt-[15rem]">
       <div className="w-[70%]">
         <TitleContact />
         <SubtitleContact />
 
-        <CardForm />
+        <ContactSwitcher
+          activeCard={activeCard}
+          setActiveCard={setActiveCard}
+        />
+
+        {activeCard === "contact" && <CardForm />}
+        {activeCard === "comment" && <CardContact />}
       </div>
     </section>
   );

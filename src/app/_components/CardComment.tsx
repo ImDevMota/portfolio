@@ -8,7 +8,7 @@ import { FaLinkedin } from "react-icons/fa";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { FaEnvelope } from "react-icons/fa";
 
-export default function CardForm() {
+export default function CardContact() {
   const { scrollY } = useScroll();
   const [visible, setVisible] = useState(false);
 
@@ -45,11 +45,11 @@ export default function CardForm() {
         <div className="backdrop-blur-2xl rounded-lg shadow-lg w-[48%] border-[0.1rem] flex flex-col items-center justify-center border-white/80">
           <div className="bg-white/2 w-full rounded-b-lg backdrop-blur-xl shadow-lg px-7 py-[1.7rem]">
             <h3 className="font-bold text-white text-[22px] text-start">
-              Contact:
+              Comment:
             </h3>
 
             <form
-              id="contactForm"
+              id="commentForm"
               className="flex flex-col w-full gap-y-[1rem]"
             >
               <div className="flex flex-row justify-between mt-[1rem]">

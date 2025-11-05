@@ -48,7 +48,7 @@ export default function BarEducation() {
                   transition: { duration: 0.5, ease: "easeIn" },
                 } // fade out
           }
-          className="flex w-[46.6rem]"
+          className="flex w-[49.4%]"
         >
           <div className="backdrop-blur-2xl rounded-lg shadow-lg w-full border border-red-400/10">
             <div className="bg-white/2 rounded-b-md backdrop-blur-xl shadow-lg px-7 py-5">
@@ -91,7 +91,7 @@ export default function BarEducation() {
                   transition: { duration: 0.5, ease: "easeIn" },
                 } // fade out
           }
-          className="flex w-[46.6rem]"
+          className="flex w-[49.4%]"
         >
           <div className="backdrop-blur-2xl rounded-lg w-full shadow-lg border border-red-400/10">
             <div className="bg-white/2 flex flex-col rounded-b-md backdrop-blur-xl shadow-lg px-7 py-5">
@@ -135,7 +135,7 @@ export default function BarEducation() {
                 transition: { duration: 0.5, ease: "easeIn" },
               } // fade out
         }
-        className="flex w-[46.6rem] justify-between"
+        className="flex w-[49.4%] justify-between"
       >
         <div className="backdrop-blur-2xl rounded-lg shadow-lg w-full border border-red-400/10">
           <div className="bg-white/2 rounded-b-md backdrop-blur-xl shadow-lg px-7 py-5">
