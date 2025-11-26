@@ -1,3 +1,4 @@
+import Footer from "./_components/Footer";
 import Header from "./_components/Header";
 import Hero from "./_components/Hero";
 import TextAbout from "./_components/TextAbout";
@@ -8,7 +9,7 @@ import SectionPortfolio from "./sections/SectionPortfolio";
 
 export default function Home() {
   return (
-    <main className="h-[550vh]">
+    <main className="">
       <Header />
 
       <Hero />
@@ -18,6 +19,8 @@ export default function Home() {
       <SectionPortfolio />
 
       <SectionContact />
+
+      <Footer />
     </main>
   );
 }

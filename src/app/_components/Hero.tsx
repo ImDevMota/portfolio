@@ -129,33 +129,42 @@ export default function Hero() {
               {/* GitHub */}
               <div className="relative group">
                 <div className="absolute -inset-[1px] bg-gradient-to-r from-red-600 via-red-500 to-red-700 rounded-[0.7rem] opacity-40 group-hover:opacity-80 blur-[0.3rem] transition duration-500"></div>
-                <button className="relative flex items-center gap-2 px-5 py-3 bg-[#0b0b0f] border border-red-500/20 rounded-[0.7rem] text-white font-medium transition">
-                  <a href="#">
+                <button className="relative flex px-5 py-3 bg-[#0b0b0f] border border-red-500/20 rounded-[0.7rem] text-white font-medium transition">
+                  <a
+                    className="flex flex-row items-center gap-x-2"
+                    href="https://github.com/ImDevMota"
+                  >
                     <FaGithub />
+                    GitHub
                   </a>
-                  GitHub
                 </button>
               </div>
 
               {/* Instagram */}
               <div className="relative group">
                 <div className="absolute -inset-[1px] bg-gradient-to-r from-red-600 via-red-500 to-red-700 rounded-[0.7rem] opacity-40 group-hover:opacity-80 blur-[0.3rem] transition duration-500"></div>
-                <button className="relative flex items-center gap-2 px-5 py-3 bg-[#0b0b0f] border border-red-500/20 rounded-[0.7rem] text-white font-medium transition">
-                  <a href="#">
+                <button className="relative flex px-5 py-3 bg-[#0b0b0f] border border-red-500/20 rounded-[0.7rem] text-white font-medium transition">
+                  <a
+                    href="https://www.instagram.com/thiagou.mota?igsh=MW9ydG9kemg0cjFmeA%3D%3D&utm_source=qr"
+                    className="flex flex-row items-center gap-x-2"
+                  >
                     <FaInstagram />
+                    Instagram
                   </a>
-                  Instagram
                 </button>
               </div>
 
               {/* Linkedin */}
               <div className="relative group">
                 <div className="absolute -inset-[1px] bg-gradient-to-r from-red-600 via-red-500 to-red-700 rounded-[0.7rem] opacity-40 group-hover:opacity-80 blur-[0.3rem] transition duration-500"></div>
-                <button className="relative flex items-center gap-2 px-5 py-3 bg-[#0b0b0f] border border-red-500/20 rounded-[0.7rem] text-white font-medium transition">
-                  <a href="#">
+                <button className="relative flex px-5 py-3 bg-[#0b0b0f] border border-red-500/20 rounded-[0.7rem] text-white font-medium transition">
+                  <a
+                    href="https://www.linkedin.com/in/thiago-mota-32332a268/"
+                    className="flex flex-row items-center gap-x-2"
+                  >
                     <FaLinkedin />
+                    Linkedin
                   </a>
-                  Linkedin
                 </button>
               </div>
             </div>

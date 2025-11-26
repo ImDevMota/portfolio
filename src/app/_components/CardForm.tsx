@@ -193,45 +193,60 @@ export default function CardForm() {
               </h3>
 
               <div className="flex flex-row items-center w-full justify-between mt-[1rem]">
-                <div className="flex flex-row border-[0.1rem] border-white/80 w-[48.5%] justify-start items-center rounded-xl px-[1rem] py-[0.8rem] gap-x-[0.7rem] transition-all duration-300 hover:-translate-y-1 active:translate-y-0">
-                  <FaGithub
-                    size={42}
-                    color="#ffffff"
-                    className="bg-white/6 py-[0.4rem] rounded-md"
-                  />
+                <div className="flex border-[0.1rem] border-white/80 w-[48.5%] rounded-xl px-[1rem] py-[0.8rem] transition-all duration-300 hover:-translate-y-1 active:translate-y-0">
+                  <a
+                    href="https://github.com/ImDevMota"
+                    className="flex flex-row gap-x-[0.7rem] justify-start items-center"
+                  >
+                    <FaGithub
+                      size={42}
+                      color="#ffffff"
+                      className="bg-white/6 py-[0.4rem] rounded-md"
+                    />
 
-                  <div className="flex flex-col items-start">
-                    <p>Github</p>
-                    <p className="text-gray-400/90">@ImDevMota</p>
-                  </div>
+                    <div className="flex flex-col items-start">
+                      <p>Github</p>
+                      <p className="text-gray-400/90">@ImDevMota</p>
+                    </div>
+                  </a>
                 </div>
 
-                <div className="flex flex-row border-[0.1rem] border-white/80 w-[48.5%] justify-start items-center rounded-xl px-[1rem] py-[0.8rem] gap-x-[0.7rem] transition-all duration-300 hover:-translate-y-1 active:translate-y-0">
-                  <FaLinkedin
-                    size={42}
-                    color="#0A66C2"
-                    className="bg-white/6 py-[0.4rem] rounded-md"
-                  />
+                <div className="flex border-[0.1rem] border-white/80 w-[48.5%] rounded-xl px-[1rem] py-[0.8rem]  transition-all duration-300 hover:-translate-y-1 active:translate-y-0">
+                  <a
+                    className="flex flex-row gap-x-[0.7rem] justify-start items-center"
+                    href="https://www.linkedin.com/in/thiago-mota-32332a268/"
+                  >
+                    <FaLinkedin
+                      size={42}
+                      color="#0A66C2"
+                      className="bg-white/6 py-[0.4rem] rounded-md"
+                    />
 
-                  <div className="flex flex-col items-start">
-                    <p>Linkedin</p>
-                    <p className="text-gray-400/90">Thiago Mota</p>
-                  </div>
+                    <div className="flex flex-col items-start">
+                      <p>Linkedin</p>
+                      <p className="text-gray-400/90">Thiago Mota</p>
+                    </div>
+                  </a>
                 </div>
               </div>
 
               <div className="flex items-center w-full justify-between mt-[1rem]">
-                <div className="flex flex-row border-[0.1rem] w-full border-white/80 justify-start items-center rounded-xl px-[1rem] py-[0.8rem] gap-x-[0.7rem] transition-all duration-300 hover:-translate-y-1 active:translate-y-0">
-                  <FaInstagram
-                    size={42}
-                    color="#E1306C"
-                    className="bg-white/6 py-[0.4rem] rounded-md"
-                  />
+                <div className="flex flex-row border-[0.1rem] w-full border-white/80 rounded-xl px-[1rem] py-[0.8rem] gap-x-[0.7rem] transition-all duration-300 hover:-translate-y-1 active:translate-y-0">
+                  <a
+                    href="https://www.instagram.com/thiagou.mota?igsh=MW9ydG9kemg0cjFmeA%3D%3D&utm_source=qr"
+                    className="flex flex-row gap-x-[0.7rem] justify-start items-center"
+                  >
+                    <FaInstagram
+                      size={42}
+                      color="#E1306C"
+                      className="bg-white/6 py-[0.4rem] rounded-md"
+                    />
 
-                  <div className="flex flex-col items-start">
-                    <p>Instagram</p>
-                    <p className="text-gray-400/90">@thiagou.mota</p>
-                  </div>
+                    <div className="flex flex-col items-start">
+                      <p>Instagram</p>
+                      <p className="text-gray-400/90">@thiagou.mota</p>
+                    </div>
+                  </a>
                 </div>
               </div>
             </div>
