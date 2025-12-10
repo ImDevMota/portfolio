@@ -5,12 +5,12 @@ import TitleAbout from "../_components/TitleAbout";
 
 export default function SectionAbout() {
   return (
-    <section className="flex items-center justify-center mt-[25rem]">
-      <div className="flex flex-col items-center justify-center w-[70%]">
+    <section className="flex items-center justify-center mt-[10rem] md:mt-[18rem] lg:mt-[25rem] px-4">
+      <div className="flex flex-col items-center justify-center w-[95%] md:w-[85%] lg:w-[70%]">
         <TitleAbout />
         <SubtitleAbout />
 
-        <div className="flex flex-row gap-x-[3rem] mt-[3rem]">
+        <div className="flex flex-col lg:flex-row gap-6 lg:gap-x-[3rem] mt-[2rem] md:mt-[3rem]">
           <ImageAbout />
           <TextAbout />
         </div>

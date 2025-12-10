@@ -20,7 +20,7 @@ export default function BarProjects() {
   });
 
   return (
-    <section className="flex flex-col mt-[2.5rem] items-center justify-center w-[80%]">
+    <section className="flex flex-col mt-[2.5rem] items-center justify-center w-[95%] md:w-[90%] lg:w-[80%]">
       <motion.div
         ref={ref}
         initial={{ opacity: 0 }}
@@ -37,16 +37,16 @@ export default function BarProjects() {
         }
         className="text-center w-full"
       >
-        <div className="flex flex-row items-center justify-between">
-          <div className="backdrop-blur-2xl rounded-lg shadow-lg w-[32%] border border-red-400/10">
-            <img src="./saas.png" alt="" className="rounded-t-lg" />
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          <div className="backdrop-blur-2xl rounded-lg shadow-lg border border-red-400/10 h-full flex flex-col">
+            <img src="./saas.png" alt="" className="rounded-t-lg w-full" />
 
-            <div className="bg-white/2 rounded-b-lg backdrop-blur-xl shadow-lg px-7 py-5">
-              <p className="font-bold bg-gradient-to-r from-red-700 to-[#a03030] bg-clip-text text-transparent text-[22px] text-start">
+            <div className="bg-white/2 rounded-b-lg backdrop-blur-xl shadow-lg px-5 md:px-7 py-5 flex-1 flex flex-col">
+              <p className="font-bold bg-gradient-to-r from-red-700 to-[#a03030] bg-clip-text text-transparent text-[18px] md:text-[20px] lg:text-[22px] text-start">
                 SaaS - Sports Court Scheduling
               </p>
 
-              <p className="text-justify mt-[0.8rem] text-[17px]">
+              <p className="text-justify mt-[0.8rem] text-[15px] md:text-[16px] lg:text-[17px] flex-1">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
                 enim ad minim veniam, quis nostrud exercitation ullamco laboris
@@ -80,15 +80,15 @@ export default function BarProjects() {
             </div>
           </div>
 
-          <div className="backdrop-blur-2xl rounded-lg shadow-lg w-[32%]  border border-red-400/10">
-            <img src="./e-commerce.png" alt="" className="rounded-t-lg" />
+          <div className="backdrop-blur-2xl rounded-lg shadow-lg border border-red-400/10 h-full flex flex-col">
+            <img src="./e-commerce.png" alt="" className="rounded-t-lg w-full" />
 
-            <div className="bg-white/2 rounded-b-lg backdrop-blur-xl shadow-lg px-7 py-5">
-              <p className="font-bold bg-gradient-to-r from-red-700 to-[#a03030] bg-clip-text text-transparent text-[22px] text-start">
+            <div className="bg-white/2 rounded-b-lg backdrop-blur-xl shadow-lg px-5 md:px-7 py-5 flex-1 flex flex-col">
+              <p className="font-bold bg-gradient-to-r from-red-700 to-[#a03030] bg-clip-text text-transparent text-[18px] md:text-[20px] lg:text-[22px] text-start">
                 E-commerce - Variedades do Coco
               </p>
 
-              <p className="text-justify mt-[0.8rem] text-[17px] ">
+              <p className="text-justify mt-[0.8rem] text-[15px] md:text-[16px] lg:text-[17px] flex-1">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
                 enim ad minim veniam, quis nostrud exercitation ullamco laboris
@@ -122,15 +122,15 @@ export default function BarProjects() {
             </div>
           </div>
 
-          <div className=" backdrop-blur-2xl rounded-lg shadow-lg w-[32%] border border-red-400/10">
-            <img src="./lp-tipminer.png" alt="" className="rounded-t-lg" />
+          <div className="backdrop-blur-2xl rounded-lg shadow-lg border border-red-400/10 h-full flex flex-col">
+            <img src="./lp-tipminer.png" alt="" className="rounded-t-lg w-full" />
 
-            <div className="bg-white/2 rounded-b-lg backdrop-blur-xl shadow-lg px-7 py-5">
-              <p className="font-bold bg-gradient-to-r from-red-700 to-[#a03030] bg-clip-text text-transparent text-[22px] text-start">
+            <div className="bg-white/2 rounded-b-lg backdrop-blur-xl shadow-lg px-5 md:px-7 py-5 flex-1 flex flex-col">
+              <p className="font-bold bg-gradient-to-r from-red-700 to-[#a03030] bg-clip-text text-transparent text-[18px] md:text-[20px] lg:text-[22px] text-start">
                 Landing Page - Tip Miner
               </p>
 
-              <p className="text-justify mt-[0.8rem] text-[17px]">
+              <p className="text-justify mt-[0.8rem] text-[15px] md:text-[16px] lg:text-[17px] flex-1">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
                 enim ad minim veniam, quis nostrud exercitation ullamco laboris

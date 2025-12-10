@@ -20,7 +20,7 @@ export default function ImageAbout() {
   });
 
   return (
-    <div>
+    <div className="w-full lg:w-auto flex-shrink-0">
       <motion.div
         ref={ref}
         initial={{ opacity: 0, x: -100 }}
@@ -42,7 +42,7 @@ export default function ImageAbout() {
         <img
           src="./about.jpg"
           alt=""
-          className="w-[190rem] h-[27rem] rounded-xl"
+          className="w-full h-[18rem] md:h-[22rem] lg:w-[500px] lg:h-[27rem] rounded-xl object-cover"
         />
       </motion.div>
     </div>

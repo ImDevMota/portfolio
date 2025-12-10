@@ -18,19 +18,19 @@ export default function NavbarProjects({
   activeBar,
   setActiveBar,
 }: NavbarProjectsProps) {
-  const baseStyle = "rounded-md transition-all";
+  const baseStyle = "rounded-md transition-all cursor-pointer";
   const activeStyle =
     "h-[4px] w-[14px] bg-gradient-to-r from-red-700 to-[#a03030] text-transparent mt-2 mb-5 text-white";
   const inactiveStyle = "hover:bg-gray-700 mt-2";
 
   const activeStyleText =
-    "font-bold text-[18px] bg-gradient-to-r from-red-700 to-[#a03030] bg-clip-text text-transparent";
+    "font-bold text-[14px] md:text-[16px] lg:text-[18px] bg-gradient-to-r from-red-700 to-[#a03030] bg-clip-text text-transparent";
 
-  const inactiveStyleText = "font-bold text-[18px]";
+  const inactiveStyleText = "font-bold text-[14px] md:text-[16px] lg:text-[18px]";
 
-  const activeStyleIcon = "mb-1 text-[1.4em]";
+  const activeStyleIcon = "mb-1 text-[1.2em] md:text-[1.4em]";
 
-  const inactiveStyleIcon = "mb-1 text-[1.5em]";
+  const inactiveStyleIcon = "mb-1 text-[1.3em] md:text-[1.5em]";
 
   const { scrollY } = useScroll();
   const [visible, setVisible] = useState(false);
@@ -63,10 +63,10 @@ export default function NavbarProjects({
                 transition: { duration: 0.6, ease: "easeIn" },
               } // sai (pra baixo)
         }
-        className="text-center h-[130px] px-[10rem] py-[1.8rem] bg-white/2 backdrop-blur-2xl rounded-2xl shadow-lg border-white/80 border-[1px] mt-[3rem] w-[80%]"
+        className="text-center h-auto md:h-[130px] px-4 md:px-[4rem] lg:px-[10rem] py-4 md:py-[1.8rem] bg-white/2 backdrop-blur-2xl rounded-2xl shadow-lg border-white/80 border-[1px] mt-[3rem] w-[95%] md:w-[90%] lg:w-[80%]"
       >
-        <div className="flex flex-row h-[80px] items-center justify-around">
-          <div onClick={() => setActiveBar("projects")}>
+        <div className="flex flex-row h-auto md:h-[80px] items-center justify-around gap-2 md:gap-4">
+          <div onClick={() => setActiveBar("projects")} className={baseStyle}>
             <div className="flex flex-col items-center">
               <FontAwesomeIcon
                 icon={faLaptopCode}
@@ -91,7 +91,7 @@ export default function NavbarProjects({
             </div>
           </div>
 
-          <div onClick={() => setActiveBar("education")}>
+          <div onClick={() => setActiveBar("education")} className={baseStyle}>
             <div className="flex flex-col items-center">
               <FontAwesomeIcon
                 icon={faGraduationCap}
@@ -120,7 +120,7 @@ export default function NavbarProjects({
             </div>
           </div>
 
-          <div onClick={() => setActiveBar("tech")}>
+          <div onClick={() => setActiveBar("tech")} className={baseStyle}>
             <div className="flex flex-col items-center">
               <FontAwesomeIcon
                 icon={faLayerGroup}
@@ -134,7 +134,8 @@ export default function NavbarProjects({
                   activeBar === "tech" ? activeStyleText : inactiveStyleText
                 }`}
               >
-                Tech Stacks
+                <span className="hidden sm:inline">Tech Stacks</span>
+                <span className="sm:hidden">Stacks</span>
               </h3>
 
               <div

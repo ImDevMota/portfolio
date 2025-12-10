@@ -104,11 +104,11 @@ export default function CardContact() {
       }
       className="text-center w-full"
     >
-      <div className="flex flex-row items-center justify-between mt-[3rem]">
+      <div className="flex flex-col lg:flex-row items-stretch justify-between mt-[2rem] md:mt-[3rem] gap-6">
         {/* FORMULÁRIO ORIGINAL */}
-        <div className="backdrop-blur-2xl rounded-lg shadow-lg w-[48%] border-[0.1rem] flex flex-col items-center justify-center border-white/80">
-          <div className="bg-white/2 w-full rounded-b-lg backdrop-blur-xl shadow-lg px-7 py-[1.7rem]">
-            <h3 className="font-bold text-white text-[22px] text-start">
+        <div className="backdrop-blur-2xl rounded-lg shadow-lg w-full lg:w-[48%] border-[0.1rem] flex flex-col items-center justify-center border-white/80">
+          <div className="bg-white/2 w-full rounded-b-lg backdrop-blur-xl shadow-lg px-4 md:px-7 py-[1.5rem] md:py-[1.7rem]">
+            <h3 className="font-bold text-white text-[18px] md:text-[22px] text-start">
               Leave a Comment:
             </h3>
 
@@ -119,7 +119,7 @@ export default function CardContact() {
             >
               <div className="flex flex-row justify-between mt-[1rem]">
                 <div className="form-group flex flex-col items-start w-full">
-                  <label className="font-bold" htmlFor="name">
+                  <label className="font-bold text-sm md:text-base" htmlFor="name">
                     Name:
                   </label>
                   <input
@@ -128,7 +128,7 @@ export default function CardContact() {
                     name="name"
                     placeholder="Your name"
                     className="border mt-[0.4rem] w-full border-white/50 px-[0.8rem] py-[0.5rem] rounded-lg
-                    text-gray-300
+                    text-gray-300 text-sm md:text-base
                     placeholder:text-gray-500
                     focus:outline-none
                     focus:border-red-500
@@ -141,7 +141,7 @@ export default function CardContact() {
               </div>
 
               <div className="form-group flex flex-col w-full items-start">
-                <label className="font-bold" htmlFor="profile">
+                <label className="font-bold text-sm md:text-base" htmlFor="profile">
                   Profile Photo (Optional):
                 </label>
                 <input
@@ -150,7 +150,7 @@ export default function CardContact() {
                   name="profile"
                   accept="image/*"
                   className="border mt-[0.4rem] w-full border-white/50 px-[0.8rem] py-[0.5rem] rounded-lg
-                    text-gray-300
+                    text-gray-300 text-sm md:text-base
                     placeholder:text-gray-500
                     focus:outline-none
                     focus:border-red-500
@@ -161,15 +161,15 @@ export default function CardContact() {
               </div>
 
               <div className="form-group flex flex-col w-full items-start">
-                <label className="font-bold" htmlFor="message">
+                <label className="font-bold text-sm md:text-base" htmlFor="message">
                   Message:
                 </label>
                 <textarea
                   id="message"
                   name="message"
                   placeholder="Message..."
-                  className="border mt-[0.4rem] w-full h-[8rem] border-white/50 px-[0.8rem] py-[0.5rem] rounded-lg
-                    text-gray-300
+                  className="border mt-[0.4rem] w-full h-[6rem] md:h-[8rem] border-white/50 px-[0.8rem] py-[0.5rem] rounded-lg
+                    text-gray-300 text-sm md:text-base
                     placeholder:text-gray-500
                     focus:outline-none
                     focus:border-red-500
@@ -182,7 +182,7 @@ export default function CardContact() {
 
               <button
                 type="submit"
-                className="submit-btn text-[16px] mb-[0.5rem] mt-[0.2rem] py-[0.7rem] w-full text-sm font-bold rounded-lg bg-gradient-to-r from-red-950 to-red-600 hover:to-red-800 transition-all duration-300 hover:-translate-y-1 active:translate-y-0 flex items-center justify-center"
+                className="submit-btn text-[14px] md:text-[16px] mb-[0.5rem] mt-[0.2rem] py-[0.7rem] w-full font-bold rounded-lg bg-gradient-to-r from-red-950 to-red-600 hover:to-red-800 transition-all duration-300 hover:-translate-y-1 active:translate-y-0 flex items-center justify-center"
                 id="submitBtn"
               >
                 Submit
@@ -192,36 +192,36 @@ export default function CardContact() {
         </div>
 
         {/* LISTA DE COMENTÁRIOS */}
-        <div className="flex backdrop-blur-2xl rounded-lg shadow-lg w-[48%] border-[0.1rem] border-white/80">
-          <div className="bg-white/1 flex flex-col  justify-start rounded-b-lg backdrop-blur-xl shadow-lg px-[2rem] w-full h-[510.95px]">
-            <h3 className="font-bold text-white text-[22px] text-start mt-[1.7rem]">
+        <div className="flex backdrop-blur-2xl rounded-lg shadow-lg w-full lg:w-[48%] border-[0.1rem] border-white/80">
+          <div className="bg-white/1 flex flex-col justify-start rounded-b-lg backdrop-blur-xl shadow-lg px-4 md:px-[2rem] w-full py-6 lg:py-0 min-h-[300px] lg:min-h-[510.95px]">
+            <h3 className="font-bold text-white text-[18px] md:text-[22px] text-start mt-[1.5rem] md:mt-[1.7rem]">
               Comment ({comments.length}):
             </h3>
 
-            <div className="flex flex-col mt-[1.7rem] w-full">
-              <div className="flex flex-col gap-3 overflow-y-auto h-[350px] pr-2 scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-transparent">
+            <div className="flex flex-col mt-[1.5rem] md:mt-[1.7rem] w-full">
+              <div className="flex flex-col gap-3 overflow-y-auto h-[250px] md:h-[350px] pr-2 scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-transparent">
                 {comments.map((comment) => (
                   <div
                     key={comment.id}
-                    className="flex flex-row border-[0.1rem] border-white/80 w-full justify-start items-center rounded-xl px-[1rem] py-[0.8rem] gap-x-[0.7rem]"
+                    className="flex flex-row border-[0.1rem] border-white/80 w-full justify-start items-center rounded-xl px-[0.8rem] md:px-[1rem] py-[0.6rem] md:py-[0.8rem] gap-x-[0.5rem] md:gap-x-[0.7rem]"
                   >
                     {comment.profile_url ? (
                       <img
                         src={comment.profile_url}
                         alt={comment.name}
-                        className="w-[42px] h-[42px] rounded-md object-cover bg-white/10"
+                        className="w-[36px] h-[36px] md:w-[42px] md:h-[42px] rounded-md object-cover bg-white/10 flex-shrink-0"
                       />
                     ) : (
                       <FaGithub
-                        size={42}
+                        size={36}
                         color="#ffffff"
-                        className="bg-white/10 py-[0.4rem] rounded-md"
+                        className="bg-white/10 py-[0.4rem] rounded-md flex-shrink-0"
                       />
                     )}
 
-                    <div className="flex flex-col items-start">
-                      <p>{comment.name}</p>
-                      <p className="text-gray-400/90">{comment.message}</p>
+                    <div className="flex flex-col items-start min-w-0">
+                      <p className="text-sm md:text-base">{comment.name}</p>
+                      <p className="text-gray-400/90 text-xs md:text-sm break-words">{comment.message}</p>
                     </div>
                   </div>
                 ))}
