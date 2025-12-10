@@ -8,7 +8,7 @@ export default function TitleContact() {
   const [visible, setVisible] = useState(false);
 
   // pontos de ativação — ajuste conforme o layout
-  const triggerStart = 2450; // onde começa o fade in
+  const triggerStart = 2600; // onde começa o fade in
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     if (latest > triggerStart) {
@@ -27,7 +27,7 @@ export default function TitleContact() {
             ? {
                 opacity: 1,
                 y: 0,
-                transition: { duration: 0.7, ease: "easeOut" },
+                transition: { duration: 0.6, ease: "easeOut" },
               } // entra (de baixo pra cima)
             : {
                 opacity: 0,

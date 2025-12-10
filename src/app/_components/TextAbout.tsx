@@ -9,7 +9,7 @@ export default function TextAbout() {
   const [visible, setVisible] = useState(false);
 
   // Define o ponto de ativação (ajuste conforme seu layout)
-  const triggerStart = 400; // px do topo da página
+  const triggerStart = 775; // px do topo da página
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     if (latest > triggerStart) {
@@ -29,7 +29,7 @@ export default function TextAbout() {
             ? {
                 opacity: 1,
                 x: 0,
-                transition: { duration: 0.8, ease: "easeOut" },
+                transition: { duration: 0.6, ease: "easeOut" },
               }
             : {
                 opacity: 0,
@@ -39,8 +39,8 @@ export default function TextAbout() {
         }
         className="rounded-2xl shadow-lg flex flex-col"
       >
-        <p className="text-[28px] md:text-[36px] lg:text-[42px] font-bold text-center lg:text-left">
-          <span className="text-red-500">Hello, I'm</span> Thiago Mota
+        <p className="text-[28px] md:text-[36px] lg:text-[40px] font-bold text-center lg:text-left">
+          <span className="text-red-500">Hello, I'm</span> Thiago Mota.
         </p>
         <p className="text-[15px] md:text-[17px] lg:text-[18px] mt-1 text-white/85 text-justify leading-[1.6rem] md:leading-[1.8rem] lg:leading-[2rem]">
           Currently, I am a Full-stack Developer and Systems Analysis and
@@ -55,20 +55,11 @@ export default function TextAbout() {
           discoveries.
         </p>
 
-        <div className="backdrop-blur-md bg-[#0a0a0a]/90 border-2 mt-[1.3rem] border-white/50 rounded-xl px-4 md:px-6 py-3 text-center">
+        <div className="backdrop-blur-md bg-[#0a0a0a]/90 border-2 mt-[1.7rem] border-white/50 rounded-xl px-4 md:px-6 py-3 text-center">
           <p className="text-white font-bold text-xs md:text-sm">
             "As long as we remain conscious, technology will always be our
             ally."
           </p>
-        </div>
-
-        <div className="mt-[1.4rem] flex flex-row gap-x-2 justify-center lg:justify-start">
-          <a
-            href="#"
-            className="py-3 px-6 md:px-9 rounded-md bg-gradient-to-r font-semibold flex flex-row gap-x-2 items-center from-red-600 to-red-950 text-sm md:text-base"
-          >
-            Download CV
-          </a>
         </div>
       </motion.div>
     </div>

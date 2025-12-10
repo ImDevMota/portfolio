@@ -8,7 +8,7 @@ export default function SubtitlePortfolio() {
   const [visible, setVisible] = useState(false);
 
   // pontos de ativação — ajuste conforme o layout
-  const triggerStart = 1300; // onde começa o fade in
+  const triggerStart = 1530; // onde começa o fade in
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     if (latest > triggerStart) {
@@ -27,7 +27,7 @@ export default function SubtitlePortfolio() {
             ? {
                 opacity: 1,
                 y: 0,
-                transition: { duration: 0.7, delay: 0.4, ease: "easeOut" },
+                transition: { duration: 0.6, delay: 0.4, ease: "easeOut" },
               } // entra (de baixo pra cima)
             : {
                 opacity: 0,

@@ -21,7 +21,7 @@ export default function Hero() {
 
   return (
     <section className="flex items-center justify-center px-4">
-      <div className="flex flex-col-reverse lg:flex-row w-[95%] md:w-[85%] lg:w-[70%] items-center justify-between mt-[8rem] md:mt-[12rem] lg:mt-[16rem] gap-8 lg:gap-4">
+      <div className="flex flex-col-reverse lg:flex-row w-[95%] md:w-[85%] lg:w-[70%] items-center justify-between mt-[8rem] md:mt-[12rem] lg:mt-[11rem] gap-8 lg:gap-4">
         <div className="flex flex-col items-center lg:items-start">
           <motion.div
             initial={{ opacity: 0, x: -100 }}
@@ -39,7 +39,8 @@ export default function Hero() {
             <div className="flex flex-col">
               <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold mb-4 text-center lg:text-left">
                 I'm <span className="text-red-700">Mota</span>
-                <br />Developer
+                <br />
+                Developer
               </h1>
             </div>
           </motion.div>

@@ -3,12 +3,12 @@
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import { useState } from "react";
 
-export default function SubtitleAbout() {
+export default function ButtonDownload() {
   const { scrollY } = useScroll();
   const [visible, setVisible] = useState(false);
 
   // pontos de ativação — ajuste conforme o layout
-  const triggerStart = 480; // onde começa o fade in
+  const triggerStart = 1020; // onde começa o fade in
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     if (latest > triggerStart) {
@@ -35,11 +35,14 @@ export default function SubtitleAbout() {
                 transition: { duration: 0.6, ease: "easeIn" },
               } // sai (pra baixo)
         }
-        className="text-center rounded-2xl shadow-lg"
+        className="text-center rounded-2xl shadow-lg mt-[3.5rem] flex flex-row gap-x-2 justify-center items-center lg:justify-start"
       >
-        <p className="text-[17px] font-light text-white/85">
-          Turning technology into meaningful solutions
-        </p>
+        <a
+          href="#"
+          className="py-3 px-6 md:px-9 rounded-md bg-gradient-to-r font-semibold flex flex-row gap-x-2 items-center from-red-600 to-red-950 text-sm md:text-base"
+        >
+          Download CV
+        </a>
       </motion.div>
     </div>
   );

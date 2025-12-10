@@ -9,7 +9,7 @@ export default function ImageAbout() {
   const [visible, setVisible] = useState(false);
 
   // Define o ponto de ativação (ajuste conforme seu layout)
-  const triggerStart = 400; // px do topo da página
+  const triggerStart = 775; // px do topo da página
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     if (latest > triggerStart) {
@@ -29,7 +29,7 @@ export default function ImageAbout() {
             ? {
                 opacity: 1,
                 x: 0,
-                transition: { duration: 0.8, ease: "easeOut" },
+                transition: { duration: 0.6, ease: "easeOut" },
               }
             : {
                 opacity: 0,

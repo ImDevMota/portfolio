@@ -13,7 +13,7 @@ export default function CardForm() {
   const [visible, setVisible] = useState(false);
 
   // Define o ponto de ativação (ajuste conforme seu layout)
-  const triggerStart = 2600; // px do topo da página
+  const triggerStart = 3000; // px do topo da página
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     if (latest > triggerStart) {
@@ -31,7 +31,7 @@ export default function CardForm() {
           ? {
               opacity: 1,
               y: 0,
-              transition: { duration: 0.7, delay: 0.5, ease: "easeOut" },
+              transition: { duration: 0.6, delay: 0.4, ease: "easeOut" },
             } // entra (de baixo pra cima)
           : {
               opacity: 0,
@@ -53,8 +53,11 @@ export default function CardForm() {
               className="flex flex-col w-full gap-y-[1rem]"
             >
               <div className="flex flex-col sm:flex-row justify-between mt-[1rem] gap-4">
-                <div className="form-group flex flex-col items-start w-full sm:w-[48%]">
-                  <label className="font-bold text-sm md:text-base" htmlFor="name">
+                <div className="form-group flex flex-col items-start w-full sm:w-[36.5%]">
+                  <label
+                    className="font-bold text-sm md:text-base"
+                    htmlFor="name"
+                  >
                     Name:
                   </label>
                   <input
@@ -74,15 +77,18 @@ export default function CardForm() {
                   />
                 </div>
 
-                <div className="form-group flex flex-col items-start w-full sm:w-[48%]">
-                  <label className="font-bold text-sm md:text-base" htmlFor="email">
+                <div className="form-group flex flex-col items-start w-full sm:w-[60%]">
+                  <label
+                    className="font-bold text-sm md:text-base"
+                    htmlFor="email"
+                  >
                     E-mail:
                   </label>
                   <input
                     type="email"
                     id="email"
                     name="email"
-                    placeholder="ex: youremail@mail.com"
+                    placeholder="youremail@mail.com"
                     className="border mt-[0.4rem] w-full border-white/50 px-[0.8rem] py-[0.5rem] rounded-lg
                     text-gray-300 text-sm md:text-base
                     placeholder:text-gray-500
@@ -97,7 +103,10 @@ export default function CardForm() {
               </div>
 
               <div className="form-group flex flex-col w-full items-start">
-                <label className="font-bold text-sm md:text-base" htmlFor="subject">
+                <label
+                  className="font-bold text-sm md:text-base"
+                  htmlFor="subject"
+                >
                   Subject:
                 </label>
                 <input
@@ -118,7 +127,10 @@ export default function CardForm() {
               </div>
 
               <div className="form-group flex flex-col w-full items-start">
-                <label className="font-bold text-sm md:text-base" htmlFor="message">
+                <label
+                  className="font-bold text-sm md:text-base"
+                  htmlFor="message"
+                >
                   Message:
                 </label>
                 <textarea
@@ -172,7 +184,9 @@ export default function CardForm() {
                       size={18}
                       className="mb-[0.2rem] flex-shrink-0"
                     />
-                    <p className="text-[14px] md:text-[16px] break-all">thiago.you23@gmail.com</p>
+                    <p className="text-[14px] md:text-[16px] break-all">
+                      thiago.you23@gmail.com
+                    </p>
                   </div>
 
                   <div className="flex flex-row items-center gap-x-2">
@@ -181,7 +195,9 @@ export default function CardForm() {
                       size={18}
                       className="mb-[0.2rem] flex-shrink-0"
                     />
-                    <p className="text-[14px] md:text-[16px]">Fortaleza, Ceará - Brasil</p>
+                    <p className="text-[14px] md:text-[16px]">
+                      Fortaleza, Ceará - Brasil
+                    </p>
                   </div>
                 </div>
               </div>
@@ -206,7 +222,9 @@ export default function CardForm() {
 
                     <div className="flex flex-col items-start">
                       <p className="text-sm md:text-base">Github</p>
-                      <p className="text-gray-400/90 text-xs md:text-sm">@ImDevMota</p>
+                      <p className="text-gray-400/90 text-xs md:text-sm">
+                        @ImDevMota
+                      </p>
                     </div>
                   </a>
                 </div>
@@ -224,7 +242,9 @@ export default function CardForm() {
 
                     <div className="flex flex-col items-start">
                       <p className="text-sm md:text-base">Linkedin</p>
-                      <p className="text-gray-400/90 text-xs md:text-sm">Thiago Mota</p>
+                      <p className="text-gray-400/90 text-xs md:text-sm">
+                        Thiago Mota
+                      </p>
                     </div>
                   </a>
                 </div>
@@ -244,7 +264,9 @@ export default function CardForm() {
 
                     <div className="flex flex-col items-start">
                       <p className="text-sm md:text-base">Instagram</p>
-                      <p className="text-gray-400/90 text-xs md:text-sm">@thiagou.mota</p>
+                      <p className="text-gray-400/90 text-xs md:text-sm">
+                        @thiagou.mota
+                      </p>
                     </div>
                   </a>
                 </div>

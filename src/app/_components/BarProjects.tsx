@@ -9,7 +9,7 @@ export default function BarProjects() {
   const [visible, setVisible] = useState(false);
 
   // Define o ponto de ativação (ajuste conforme seu layout)
-  const triggerStart = 1500; // px do topo da página
+  const triggerStart = 1990; // px do topo da página
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     if (latest > triggerStart) {
@@ -28,11 +28,11 @@ export default function BarProjects() {
           visible
             ? {
                 opacity: 1,
-                transition: { duration: 0.5, delay: 0.2, ease: "easeOut" },
+                transition: { duration: 0.6, delay: 0.5, ease: "easeOut" },
               } // fade in
             : {
                 opacity: 0,
-                transition: { duration: 0.5, ease: "easeIn" },
+                transition: { duration: 0.6, ease: "easeIn" },
               } // fade out
         }
         className="text-center w-full"
@@ -81,7 +81,11 @@ export default function BarProjects() {
           </div>
 
           <div className="backdrop-blur-2xl rounded-lg shadow-lg border border-red-400/10 h-full flex flex-col">
-            <img src="./e-commerce.png" alt="" className="rounded-t-lg w-full" />
+            <img
+              src="./e-commerce.png"
+              alt=""
+              className="rounded-t-lg w-full"
+            />
 
             <div className="bg-white/2 rounded-b-lg backdrop-blur-xl shadow-lg px-5 md:px-7 py-5 flex-1 flex flex-col">
               <p className="font-bold bg-gradient-to-r from-red-700 to-[#a03030] bg-clip-text text-transparent text-[18px] md:text-[20px] lg:text-[22px] text-start">
@@ -123,7 +127,11 @@ export default function BarProjects() {
           </div>
 
           <div className="backdrop-blur-2xl rounded-lg shadow-lg border border-red-400/10 h-full flex flex-col">
-            <img src="./lp-tipminer.png" alt="" className="rounded-t-lg w-full" />
+            <img
+              src="./lp-tipminer.png"
+              alt=""
+              className="rounded-t-lg w-full"
+            />
 
             <div className="bg-white/2 rounded-b-lg backdrop-blur-xl shadow-lg px-5 md:px-7 py-5 flex-1 flex flex-col">
               <p className="font-bold bg-gradient-to-r from-red-700 to-[#a03030] bg-clip-text text-transparent text-[18px] md:text-[20px] lg:text-[22px] text-start">

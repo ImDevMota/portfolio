@@ -18,8 +18,8 @@ export default function BarTechStacks() {
   const [visibleCol2, setVisibleCol2] = useState(false);
 
   // Define o ponto de ativação (ajuste conforme seu layout)
-  const triggerStartCol1 = 1515; // px do topo da página
-  const triggerStartCol2 = 1665; // px do topo da página
+  const triggerStartCol1 = 1840; // px do topo da página
+  const triggerStartCol2 = 1990; // px do topo da página
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     if (latest > triggerStartCol1) {
@@ -50,7 +50,7 @@ export default function BarTechStacks() {
                   scale: 1,
                   transition: {
                     duration: 1,
-                    delay: 0.3,
+                    delay: 0.4,
                     ease: [0.16, 1, 0.3, 1], // curva suave
                   },
                 }
@@ -84,7 +84,7 @@ export default function BarTechStacks() {
                   scale: 1,
                   transition: {
                     duration: 1,
-                    delay: 0.4,
+                    delay: 0.5,
                     ease: [0.16, 1, 0.3, 1], // curva suave
                   },
                 }
@@ -118,7 +118,7 @@ export default function BarTechStacks() {
                   scale: 1,
                   transition: {
                     duration: 1,
-                    delay: 0.5,
+                    delay: 0.6,
                     ease: [0.16, 1, 0.3, 1], // curva suave
                   },
                 }
@@ -149,7 +149,7 @@ export default function BarTechStacks() {
                   scale: 1,
                   transition: {
                     duration: 1,
-                    delay: 0.6,
+                    delay: 0.7,
                     ease: [0.16, 1, 0.3, 1], // curva suave
                   },
                 }
@@ -185,7 +185,7 @@ export default function BarTechStacks() {
                   scale: 1,
                   transition: {
                     duration: 1,
-                    delay: 0.6,
+                    delay: 0.7,
                     ease: [0.16, 1, 0.3, 1], // curva suave
                   },
                 }
@@ -219,7 +219,7 @@ export default function BarTechStacks() {
                   scale: 1,
                   transition: {
                     duration: 1,
-                    delay: 0.5,
+                    delay: 0.6,
                     ease: [0.16, 1, 0.3, 1], // curva suave
                   },
                 }
@@ -253,7 +253,7 @@ export default function BarTechStacks() {
                   scale: 1,
                   transition: {
                     duration: 1,
-                    delay: 0.4,
+                    delay: 0.5,
                     ease: [0.16, 1, 0.3, 1], // curva suave
                   },
                 }
@@ -269,7 +269,11 @@ export default function BarTechStacks() {
           className="flex w-full"
         >
           <div className="backdrop-blur-2xl py-[1.2rem] md:py-[1.7rem] flex items-center flex-col rounded-lg shadow-lg w-full border-2 border-white/50">
-            <img src="/n8n-color.svg" alt="n8n" className=" mb-2 w-[32px] md:w-[42px]" />
+            <img
+              src="/n8n-color.svg"
+              alt="n8n"
+              className=" mb-2 w-[32px] md:w-[42px]"
+            />
             <p className="text-[14px] md:text-[16px] text-center">n8n</p>
           </div>
         </motion.div>
@@ -284,7 +288,7 @@ export default function BarTechStacks() {
                   scale: 1,
                   transition: {
                     duration: 1,
-                    delay: 0.3,
+                    delay: 0.4,
                     ease: [0.16, 1, 0.3, 1], // curva suave
                   },
                 }

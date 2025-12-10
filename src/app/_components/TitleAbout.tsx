@@ -8,7 +8,7 @@ export default function TitleAbout() {
   const [visible, setVisible] = useState(false);
 
   // pontos de ativação — ajuste conforme o layout
-  const triggerStart = 250; // aparece depois disso
+  const triggerStart = 450; // aparece depois disso
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     // visível apenas entre triggerStart e triggerEnd
@@ -28,12 +28,12 @@ export default function TitleAbout() {
             ? {
                 opacity: 1,
                 y: 0,
-                transition: { duration: 0.7, ease: "easeOut" },
+                transition: { duration: 0.6, ease: "easeOut" },
               } // entra (de baixo pra cima)
             : {
                 opacity: 0,
                 y: 120,
-                transition: { duration: 0.7, ease: "easeIn" },
+                transition: { duration: 0.6, ease: "easeIn" },
               } // sai (pra baixo)
         }
         className="text-center rounded-2xl shadow-lg"

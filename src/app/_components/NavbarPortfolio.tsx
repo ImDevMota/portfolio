@@ -26,7 +26,8 @@ export default function NavbarProjects({
   const activeStyleText =
     "font-bold text-[14px] md:text-[16px] lg:text-[18px] bg-gradient-to-r from-red-700 to-[#a03030] bg-clip-text text-transparent";
 
-  const inactiveStyleText = "font-bold text-[14px] md:text-[16px] lg:text-[18px]";
+  const inactiveStyleText =
+    "font-bold text-[14px] md:text-[16px] lg:text-[18px]";
 
   const activeStyleIcon = "mb-1 text-[1.2em] md:text-[1.4em]";
 
@@ -36,7 +37,7 @@ export default function NavbarProjects({
   const [visible, setVisible] = useState(false);
 
   // pontos de ativação — ajuste conforme o layout
-  const triggerStart = 1350; // onde começa o fade in
+  const triggerStart = 1700; // onde começa o fade in
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     if (latest > triggerStart) {
@@ -55,7 +56,7 @@ export default function NavbarProjects({
             ? {
                 opacity: 1,
                 y: 0,
-                transition: { duration: 0.7, delay: 0.5, ease: "easeOut" },
+                transition: { duration: 0.6, delay: 0.4, ease: "easeOut" },
               } // entra (de baixo pra cima)
             : {
                 opacity: 0,

@@ -12,8 +12,8 @@ export default function BarEducation() {
   const [visibleCol2, setVisibleCol2] = useState(false);
 
   // Define o ponto de ativação (ajuste conforme seu layout)
-  const triggerStartCol1 = 1500; // px do topo da página
-  const triggerStartCol2 = 1725; // px do topo da página
+  const triggerStartCol1 = 1955; // px do topo da página
+  const triggerStartCol2 = 2105; // px do topo da página
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     if (latest > triggerStartCol1) {

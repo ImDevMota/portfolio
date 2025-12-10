@@ -8,7 +8,7 @@ export default function TitlePortfolio() {
   const [visible, setVisible] = useState(false);
 
   // pontos de ativação — ajuste conforme o layout
-  const triggerStart = 1250; // onde começa o fade in
+  const triggerStart = 1500; // onde começa o fade in
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     if (latest > triggerStart) {
@@ -27,7 +27,7 @@ export default function TitlePortfolio() {
             ? {
                 opacity: 1,
                 y: 0,
-                transition: { duration: 0.7, ease: "easeOut" },
+                transition: { duration: 0.6, ease: "easeOut" },
               } // entra (de baixo pra cima)
             : {
                 opacity: 0,

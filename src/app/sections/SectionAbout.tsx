@@ -1,3 +1,4 @@
+import ButtonDownload from "../_components/ButtonDownload";
 import ImageAbout from "../_components/ImageAbout";
 import SubtitleAbout from "../_components/SubtitleAbout";
 import TextAbout from "../_components/TextAbout";
@@ -14,6 +15,7 @@ export default function SectionAbout() {
           <ImageAbout />
           <TextAbout />
         </div>
+        <ButtonDownload />
       </div>
     </section>
   );
