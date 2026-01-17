@@ -10,6 +10,7 @@ import {
   FaEnvelope,
   FaCode,
 } from "react-icons/fa";
+import FloatingTerminal from "./FloatingTerminal";
 
 export default function Hero() {
   const [visible, setVisible] = useState(false);
@@ -21,7 +22,7 @@ export default function Hero() {
 
   return (
     <section className="flex items-center justify-center px-4">
-      <div className="flex flex-col-reverse lg:flex-row w-[95%] md:w-[85%] lg:w-[70%] items-center justify-between mt-[8rem] md:mt-[12rem] lg:mt-[11rem] gap-8 lg:gap-4">
+      <div className="flex flex-col-reverse lg:flex-row w-[95%] md:w-[85%] lg:w-[80%] items-center justify-between mt-[8rem] md:mt-[12rem] lg:mt-[11rem] gap-8 lg:gap-6">
         <div className="flex flex-col items-center lg:items-start">
           <motion.div
             initial={{ opacity: 0, x: -100 }}
@@ -34,7 +35,7 @@ export default function Hero() {
                   }
                 : {}
             }
-            className="rounded-2xl shadow-lg"
+            className="rounded-2xl "
           >
             <div className="flex flex-col">
               <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold mb-4 text-center lg:text-left">
@@ -56,7 +57,7 @@ export default function Hero() {
                   }
                 : {}
             }
-            className="rounded-2xl shadow-lg"
+            className="rounded-2xl"
           >
             <TextWriter />
           </motion.div>
@@ -72,7 +73,7 @@ export default function Hero() {
                   }
                 : {}
             }
-            className="rounded-2xl shadow-lg"
+            className="rounded-2xl"
           >
             <p className="text-base md:text-lg lg:text-xl font-inter font-[100] mt-[1.3rem] text-center lg:text-left">
               Transforming ideas into websites, automations and intelligent{" "}
@@ -172,11 +173,7 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        <img
-          src="./perfil.jpg"
-          alt=""
-          className="w-[200px] h-[200px] md:w-[300px] md:h-[300px] lg:w-[400px] lg:h-[400px] rounded-full"
-        />
+        <FloatingTerminal />
       </div>
     </section>
   );
