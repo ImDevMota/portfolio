@@ -36,7 +36,7 @@ export default function TitleAbout() {
                 transition: { duration: 0.6, ease: "easeIn" },
               } // sai (pra baixo)
         }
-        className="text-center rounded-2xl shadow-lg"
+        className="text-center rounded-2xl"
       >
         <h1 className="text-[48px] font-bold bg-gradient-to-r from-red-700 to-red-700 text-transparent bg-clip-text">
           About Me

@@ -20,7 +20,7 @@ export default function FloatingTerminal() {
 
   return (
     <motion.div
-      className="w-full lg:w-[40%] relative h-[280px] sm:h-[300px] md:h-[320px]"
+      className="w-full lg:w-[40%] mt-[3rem] md:mt-[3rem] lg:mt-[0rem] relative h-[280px] sm:h-[300px] md:h-[320px] flex flex-col items-center justify-center"
       animate={{ y: [0, -15, 0] }}
       transition={{
         duration: 4,
@@ -121,7 +121,7 @@ export default function FloatingTerminal() {
               }}
               className="overflow-hidden bg-[#0a0a0a]"
             >
-              <div className="p-5 font-mono text-sm space-y-4">
+              <div className="p-5 font-mono text-sm space-y-4 ">
                 {/* Line 1: whoami */}
                 <div>
                   <p className="text-neutral-400">

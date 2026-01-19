@@ -41,7 +41,7 @@ export default function Header() {
             : "bg-transparent backdrop-blur-0"
         }`}
       >
-        <div className="flex justify-between items-center w-[90%] md:w-[80%] lg:w-[70%]">
+        <div className="flex justify-between items-center w-[95%] md:w-[85%] lg:w-[80%]">
           <a
             href="#"
             className="font-bold text-2xl text-red-700 drop-shadow-[0_0_5px_#b91c1c] animate-[pulse_3.5s_infinite]"
@@ -57,10 +57,16 @@ export default function Header() {
             <a href="#about" className="hover:border-b-2 hover:border-red-700">
               About
             </a>
-            <a href="#portfolio" className="hover:border-b-2 hover:border-red-700">
+            <a
+              href="#portfolio"
+              className="hover:border-b-2 hover:border-red-700"
+            >
               Portfolio
             </a>
-            <a href="#contact" className="hover:border-b-2 hover:border-red-700">
+            <a
+              href="#contact"
+              className="hover:border-b-2 hover:border-red-700"
+            >
               Contact
             </a>
           </nav>
@@ -83,7 +89,7 @@ export default function Header() {
           onClick={() => setIsMenuOpen(false)}
         />
       )}
-      
+
       <nav
         className={`fixed top-0 right-0 h-full w-[70%] max-w-[280px] bg-[#0a0a0a] border-l border-red-900/30 z-[60] transform transition-transform duration-300 ease-out md:hidden ${
           isMenuOpen ? "translate-x-0" : "translate-x-full"

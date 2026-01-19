@@ -22,7 +22,7 @@ export default function Hero() {
 
   return (
     <section className="flex items-center justify-center px-4">
-      <div className="flex flex-col-reverse lg:flex-row w-[95%] md:w-[85%] lg:w-[80%] items-center justify-between mt-[8rem] md:mt-[12rem] lg:mt-[11rem] gap-8 lg:gap-6">
+      <div className="flex flex-col lg:flex-row w-[95%] md:w-[85%] lg:w-[80%] items-center justify-between mt-[8rem] md:mt-[12rem] lg:mt-[11rem] gap-8 lg:gap-6">
         <div className="flex flex-col items-center lg:items-start">
           <motion.div
             initial={{ opacity: 0, x: -100 }}

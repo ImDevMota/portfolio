@@ -35,7 +35,7 @@ export default function SubtitleAbout() {
                 transition: { duration: 0.6, ease: "easeIn" },
               } // sai (pra baixo)
         }
-        className="text-center rounded-2xl shadow-lg"
+        className="text-center rounded-2xl"
       >
         <p className="text-[17px] font-light text-white/85">
           Turning technology into meaningful solutions

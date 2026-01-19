@@ -37,7 +37,7 @@ export default function TitlePortfolio() {
         }
         className="text-center"
       >
-        <p className="text-[48px] font-bold bg-gradient-to-r from-red-700 to-red-700 text-transparent bg-clip-text">
+        <p className="text-[48px] font-bold bg-gradient-to-r from-red-700 to-red-700 text-transparent bg-clip-text leading-[1.2]">
           Portfolio Showcase
         </p>
       </motion.div>

@@ -19,7 +19,7 @@ export default function SubtitlePortfolio() {
   });
 
   return (
-    <div className="flex flex-col items-center justify-center">
+    <div className="flex flex-col items-center justify-center mt-4">
       <motion.div
         initial={{ opacity: 0, y: 100 }} // começa invisível e 100px abaixo
         animate={

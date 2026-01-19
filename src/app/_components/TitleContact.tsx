@@ -37,7 +37,9 @@ export default function TitleContact() {
         }
         className="text-center"
       >
-        <p className="text-[42px] font-bold text-red-500">Contact Me</p>
+        <p className="text-[42px] font-bold bg-gradient-to-r from-red-700 to-red-700 text-transparent bg-clip-text">
+          Contact Me
+        </p>
       </motion.div>
     </div>
   );
