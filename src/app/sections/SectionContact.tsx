@@ -13,7 +13,10 @@ export default function SectionContact() {
   const [activeCard, setActiveCard] = useState<ActiveCard>("contact");
 
   return (
-    <section className="flex items-center justify-center mt-[8rem] md:mt-[12rem] lg:mt-[15rem] px-4">
+    <section
+      id="contact"
+      className="flex items-center justify-center mt-[8rem] md:mt-[12rem] lg:mt-[15rem] px-4"
+    >
       <div className="w-[95%] md:w-[85%] lg:w-[70%]">
         <TitleContact />
         <SubtitleContact />

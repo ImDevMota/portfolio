@@ -13,7 +13,10 @@ export default function SectionPortfolio() {
   const [activeBar, setActiveBar] = useState<ActiveBar>("projects");
 
   return (
-    <section className="flex flex-col items-center font-montserrat justify-center mt-[8rem] md:mt-[15rem] lg:mt-[25rem] mb-[5rem] md:mb-[10rem] px-4">
+    <section
+      id="portfolio"
+      className="flex flex-col items-center font-montserrat justify-center mt-[8rem] md:mt-[15rem] lg:mt-[25rem] mb-[5rem] md:mb-[10rem] px-4"
+    >
       <TitlePortfolio />
       <SubtitlePortfolio />
 

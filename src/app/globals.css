@@ -3,6 +3,11 @@
 @import url("https://rsms.me/inter/inter.css");
 @import "tailwindcss";
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -31,7 +36,8 @@
 body {
   background: var(--background);
   background-color: #080808; /* fundo escuro */
-  background-image: linear-gradient(#3333332f 1px, transparent 1px),
+  background-image:
+    linear-gradient(#3333332f 1px, transparent 1px),
     linear-gradient(90deg, #3333332f 1px, transparent 1px);
   background-size: 19px 19px;
   color: var(--foreground);

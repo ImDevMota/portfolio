@@ -28,17 +28,17 @@ export default function TextAbout() {
         <p className="text-[32px] md:text-[36px] lg:text-[40px] font-bold lg:text-left">
           <span className="text-red-500">Hello, I'm</span> Thiago Mota.
         </p>
-        <p className="text-[15px] md:text-[17px] lg:text-[18px] mt-1 text-white/85 text-justify leading-[1.6rem] md:leading-[1.8rem] lg:leading-[2rem]">
-          Currently, I am a Full-stack Developer and Systems Analysis and
-          Development Technologist. I also work as a Manager and Developer in
-          the technology community{" "}
+        <p className="text-[15px] md:text-[17px] lg:text-[18px] mt-1 text-white/85 text-justify leading-[1.6rem] md:leading-[1.8rem] lg:leading-[1.9rem]">
+          Currently, I'm a Full-Stack Developer with a primary focus on Backend
+          development and a Technologist in Systems Analysis and Development.
+          I'm expanding my expertise through a postgraduate degree in Software
+          Engineering, DevOps, and Cloud Computing. I also serve as a Volunteer
+          Project Manager and Developer in the technology community{" "}
           <a href="#" className="text-amber-300 font-bold">
             CODA.CE
           </a>
-          . I am fascinated by technology and am always seeking to learn more in
-          various areas. I am very interested in becoming a Computer Scientist
-          in the near future and being part of teams that bring innovations and
-          discoveries.
+          . I'm fascinated by technology and am always seeking to learn more in
+          various areas.
         </p>
 
         <div className="backdrop-blur-md bg-[#0a0a0a]/90 border-2 mt-[1.7rem] border-white/50 rounded-xl px-4 md:px-6 py-3 text-center">

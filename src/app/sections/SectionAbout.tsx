@@ -6,7 +6,10 @@ import TitleAbout from "../_components/TitleAbout";
 
 export default function SectionAbout() {
   return (
-    <section className="flex items-center justify-center mt-[7.5rem] md:mt-[18rem] lg:mt-[25rem] px-4">
+    <section
+      id="about"
+      className="flex items-center justify-center mt-[7.5rem] md:mt-[18rem] lg:mt-[25rem] px-4"
+    >
       <div className="flex flex-col items-center justify-center w-[95%] md:w-[85%] lg:w-[70%]">
         <TitleAbout />
         <SubtitleAbout />
