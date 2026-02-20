@@ -1,39 +1,27 @@
 "use client";
 
-import { motion, useScroll, useMotionValueEvent } from "framer-motion";
-import { useState } from "react";
+import { motion } from "framer-motion";
+import { useScrollReveal } from "../../utils/useScrollReveal";
 
 export default function ButtonDownload() {
-  const { scrollY } = useScroll();
-  const [visible, setVisible] = useState(false);
-
-  // pontos de ativação — ajuste conforme o layout
-  const triggerStart = 1020; // onde começa o fade in
-
-  useMotionValueEvent(scrollY, "change", (latest) => {
-    if (latest > triggerStart) {
-      setVisible(true);
-    } else {
-      setVisible(false);
-    }
-  });
+  const visible = useScrollReveal(850, 950, 650, 890);
 
   return (
     <div className="flex flex-col items-center justify-center">
       <motion.div
-        initial={{ opacity: 0, y: 130 }} // começa invisível e 100px abaixo
+        initial={{ opacity: 0, y: 130 }}
         animate={
           visible
             ? {
                 opacity: 1,
                 y: 0,
                 transition: { duration: 0.6, ease: "easeOut" },
-              } // entra (de baixo pra cima)
+              }
             : {
                 opacity: 0,
                 y: 130,
                 transition: { duration: 0.6, ease: "easeIn" },
-              } // sai (pra baixo)
+              }
         }
         className="text-center rounded-2xl shadow-lg mt-[3.5rem] flex flex-row gap-x-2 justify-center items-center lg:justify-start"
       >

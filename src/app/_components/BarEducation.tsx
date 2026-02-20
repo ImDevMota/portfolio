@@ -2,40 +2,23 @@
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGraduationCap } from "@fortawesome/free-solid-svg-icons";
-import { motion, useScroll, useMotionValueEvent } from "framer-motion";
-import { useState, useRef } from "react";
+import { motion } from "framer-motion";
+import { useScrollReveal } from "../../utils/useScrollReveal";
 
 export default function BarEducation() {
-  const ref = useRef(null);
-  const { scrollY } = useScroll();
-  const [visibleCol1, setVisibleCol1] = useState(false);
-  const [visibleCol2, setVisibleCol2] = useState(false);
-
-  // Define o ponto de ativação (ajuste conforme seu layout)
-  const triggerStartCol1 = 1955; // px do topo da página
-  const triggerStartCol2 = 2105; // px do topo da página
-
-  useMotionValueEvent(scrollY, "change", (latest) => {
-    if (latest > triggerStartCol1) {
-      setVisibleCol1(true);
-    } else {
-      setVisibleCol1(false);
-    }
-  });
-
-  useMotionValueEvent(scrollY, "change", (latest) => {
-    if (latest > triggerStartCol2) {
-      setVisibleCol2(true);
-    } else {
-      setVisibleCol2(false);
-    }
-  });
+  // Card 1: Technologist Diplom
+  const visibleCol1 = useScrollReveal(1100, 1880, 1150, 1430);
+  // Card 2: Post Graduate
+  const visibleCol2 = useScrollReveal(1100, 1880, 1380, 1600);
+  // Card 3: Back-end Java
+  const visibleCol3 = useScrollReveal(1150, 2090, 1350, 1750);
+  // Card 4: Full-Stack
+  const visibleCol4 = useScrollReveal(1150, 2090, 1730, 1905);
 
   return (
     <section className="flex flex-col mt-[2.5rem] gap-y-[1.5rem] md:gap-y-[2.5rem] w-[95%] md:w-[90%] lg:w-[80%]">
-      <div className="flex flex-col md:flex-row w-full justify-between gap-4">
+      <div className="flex flex-col md:flex-row w-full justify-between gap-[1.5rem] md:gap-4">
         <motion.div
-          ref={ref}
           initial={{ opacity: 0 }}
           animate={
             visibleCol1
@@ -78,10 +61,9 @@ export default function BarEducation() {
         </motion.div>
 
         <motion.div
-          ref={ref}
           initial={{ opacity: 0 }}
           animate={
-            visibleCol1
+            visibleCol2
               ? {
                   opacity: 1,
                   transition: { duration: 0.5, delay: 0.35, ease: "easeOut" },
@@ -101,6 +83,92 @@ export default function BarEducation() {
                   className=" mb-1 text-[22px] md:text-[27px] text-red-500"
                 />{" "}
                 <p className="font-bold text-white text-[18px] md:text-[22px] text-start">
+                  Post Graduate
+                </p>
+              </div>
+
+              <div className="mt-[1rem] flex flex-col gap-y-[0.5rem]">
+                <p className="w-full text-sm font-medium text-[14px] md:text-[16px] rounded-lg flex ">
+                  Software Engineering, DevOps and Cloud - Unifametro
+                </p>
+
+                <div className="flex flex-wrap gap-2 mt-2 mb-6">
+                  <span className="bg-red-800 text-indigo-100 text-[12px] md:text-[13px] font-medium px-2.5 py-0.5 rounded-full">
+                    2026 – 2027
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+      </div>
+
+      <div className="flex flex-col md:flex-row w-full justify-between gap-[1.5rem] md:gap-4">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={
+            visibleCol3
+              ? {
+                  opacity: 1,
+                  transition: { duration: 0.5, delay: 0.5, ease: "easeOut" },
+                } // fade in
+              : {
+                  opacity: 0,
+                  transition: { duration: 0.5, ease: "easeIn" },
+                } // fade out
+          }
+          className="flex w-full md:w-[49.4%]"
+        >
+          <div className="backdrop-blur-2xl rounded-lg shadow-lg w-full border border-red-400/10">
+            <div className="bg-white/2 rounded-b-md backdrop-blur-xl shadow-lg px-5 md:px-7 py-5">
+              <div className="flex flex-row items-center gap-x-3">
+                <FontAwesomeIcon
+                  icon={faGraduationCap}
+                  className=" mb-1 text-[22px] md:text-[27px] text-red-500"
+                />{" "}
+                <p className="font-bold text-white text-[18px] md:text-[22px] text-start">
+                  Back-end Java
+                </p>
+              </div>
+
+              <div className="mt-[1rem] flex flex-col gap-y-[0.5rem]">
+                <p className="w-full text-sm font-medium text-[14px] md:text-[16px] rounded-lg flex ">
+                  Bootcamp DIO - Santander
+                </p>
+
+                <div className="flex flex-wrap gap-2 mt-2 mb-6">
+                  <span className="bg-red-800 text-indigo-100 text-[12px] md:text-[13px] font-medium px-2.5 py-0.5 rounded-full">
+                    2023 – 2024
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={
+            visibleCol4
+              ? {
+                  opacity: 1,
+                  transition: { duration: 0.5, delay: 0.65, ease: "easeOut" },
+                } // fade in
+              : {
+                  opacity: 0,
+                  transition: { duration: 0.5, ease: "easeIn" },
+                } // fade out
+          }
+          className="flex w-full md:w-[49.4%]"
+        >
+          <div className="backdrop-blur-2xl rounded-lg shadow-lg w-full border border-red-400/10">
+            <div className="bg-white/2 rounded-b-md backdrop-blur-xl shadow-lg px-5 md:px-7 py-5">
+              <div className="flex flex-row items-center gap-x-3">
+                <FontAwesomeIcon
+                  icon={faGraduationCap}
+                  className=" mb-1 text-[22px] md:text-[27px] text-red-500"
+                />{" "}
+                <p className="font-bold text-white text-[18px] md:text-[22px] text-start">
                   Full-Stack
                 </p>
               </div>
@@ -112,7 +180,7 @@ export default function BarEducation() {
 
                 <div className="flex flex-wrap gap-2 mt-2 mb-6">
                   <span className="bg-red-800 text-indigo-100 text-[12px] md:text-[13px] font-medium px-2.5 py-0.5 rounded-full">
-                    2025 – So Far
+                    2025 – 2026
                   </span>
                 </div>
               </div>
@@ -120,49 +188,6 @@ export default function BarEducation() {
           </div>
         </motion.div>
       </div>
-
-      <motion.div
-        ref={ref}
-        initial={{ opacity: 0 }}
-        animate={
-          visibleCol2
-            ? {
-                opacity: 1,
-                transition: { duration: 0.5, delay: 0.5, ease: "easeOut" },
-              } // fade in
-            : {
-                opacity: 0,
-                transition: { duration: 0.5, ease: "easeIn" },
-              } // fade out
-        }
-        className="flex w-full md:w-[49.4%] justify-between"
-      >
-        <div className="backdrop-blur-2xl rounded-lg shadow-lg w-full border border-red-400/10">
-          <div className="bg-white/2 rounded-b-md backdrop-blur-xl shadow-lg px-5 md:px-7 py-5">
-            <div className="flex flex-row items-center gap-x-3">
-              <FontAwesomeIcon
-                icon={faGraduationCap}
-                className=" mb-1 text-[22px] md:text-[27px] text-red-500"
-              />{" "}
-              <p className="font-bold text-white text-[18px] md:text-[22px] text-start">
-                Back-end Java
-              </p>
-            </div>
-
-            <div className="mt-[1rem] flex flex-col gap-y-[0.5rem]">
-              <p className="w-full text-sm font-medium text-[14px] md:text-[16px] rounded-lg flex ">
-                Bootcamp DIO - Santander
-              </p>
-
-              <div className="flex flex-wrap gap-2 mt-2 mb-6">
-                <span className="bg-red-800 text-indigo-100 text-[12px] md:text-[13px] font-medium px-2.5 py-0.5 rounded-full">
-                  2023 – 2024
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </motion.div>
     </section>
   );
 }

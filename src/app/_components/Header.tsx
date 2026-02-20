@@ -51,21 +51,27 @@ export default function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex flex-row gap-x-[2rem]">
-            <a href="#" className="hover:border-b-2 hover:border-red-700">
+            <a
+              href="#"
+              className="border-b-2 border-transparent hover:border-red-700 transition-colors"
+            >
               Home
             </a>
-            <a href="#about" className="hover:border-b-2 hover:border-red-700">
+            <a
+              href="#about"
+              className="border-b-2 border-transparent hover:border-red-700 transition-colors"
+            >
               About
             </a>
             <a
               href="#portfolio"
-              className="hover:border-b-2 hover:border-red-700"
+              className="border-b-2 border-transparent hover:border-red-700 transition-colors"
             >
               Portfolio
             </a>
             <a
               href="#contact"
-              className="hover:border-b-2 hover:border-red-700"
+              className="border-b-2 border-transparent hover:border-red-700 transition-colors"
             >
               Contact
             </a>

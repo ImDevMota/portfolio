@@ -1,35 +1,21 @@
 "use client";
 
-import { motion, useScroll, useMotionValueEvent } from "framer-motion";
-import { useState, useRef } from "react";
+import { motion } from "framer-motion";
+import { useScrollReveal } from "../../utils/useScrollReveal";
 
 export default function TextAbout() {
-  const ref = useRef(null);
-  const { scrollY } = useScroll();
-  const [visible, setVisible] = useState(false);
-
-  // Define o ponto de ativação (ajuste conforme seu layout)
-  const triggerStart = 775; // px do topo da página
-
-  useMotionValueEvent(scrollY, "change", (latest) => {
-    if (latest > triggerStart) {
-      setVisible(true);
-    } else {
-      setVisible(false);
-    }
-  });
+  const visible = useScrollReveal(350, 670, 400, 750);
 
   return (
     <div className="flex flex-col">
       <motion.div
-        ref={ref}
         initial={{ opacity: 0, x: 100 }}
         animate={
           visible
             ? {
                 opacity: 1,
                 x: 0,
-                transition: { duration: 0.6, ease: "easeOut" },
+                transition: { duration: 0.6, delay: 0.2, ease: "easeOut" },
               }
             : {
                 opacity: 0,
@@ -39,7 +25,7 @@ export default function TextAbout() {
         }
         className="rounded-2xl shadow-lg flex flex-col"
       >
-        <p className="text-[28px] md:text-[36px] lg:text-[40px] font-bold text-center lg:text-left">
+        <p className="text-[32px] md:text-[36px] lg:text-[40px] font-bold lg:text-left">
           <span className="text-red-500">Hello, I'm</span> Thiago Mota.
         </p>
         <p className="text-[15px] md:text-[17px] lg:text-[18px] mt-1 text-white/85 text-justify leading-[1.6rem] md:leading-[1.8rem] lg:leading-[2rem]">

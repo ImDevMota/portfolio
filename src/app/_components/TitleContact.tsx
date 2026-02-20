@@ -1,25 +1,13 @@
 "use client";
 
-import { motion, useScroll, useMotionValueEvent } from "framer-motion";
-import { useState } from "react";
+import { motion } from "framer-motion";
+import { useInViewReveal } from "../../utils/useInViewReveal";
 
 export default function TitleContact() {
-  const { scrollY } = useScroll();
-  const [visible, setVisible] = useState(false);
-
-  // pontos de ativação — ajuste conforme o layout
-  const triggerStart = 2600; // onde começa o fade in
-
-  useMotionValueEvent(scrollY, "change", (latest) => {
-    if (latest > triggerStart) {
-      setVisible(true);
-    } else {
-      setVisible(false);
-    }
-  });
+  const { ref, visible } = useInViewReveal(0.1, "-120px");
 
   return (
-    <div className="flex flex-col items-center justify-cente">
+    <div ref={ref} className="flex flex-col items-center justify-cente">
       <motion.div
         initial={{ opacity: 0, y: 100 }}
         animate={

@@ -1,35 +1,21 @@
 "use client";
 
-import { motion, useScroll, useMotionValueEvent } from "framer-motion";
-import { useState, useRef } from "react";
+import { motion } from "framer-motion";
+import { useScrollReveal } from "../../utils/useScrollReveal";
 
 export default function ImageAbout() {
-  const ref = useRef(null);
-  const { scrollY } = useScroll();
-  const [visible, setVisible] = useState(false);
-
-  // Define o ponto de ativação (ajuste conforme seu layout)
-  const triggerStart = 775; // px do topo da página
-
-  useMotionValueEvent(scrollY, "change", (latest) => {
-    if (latest > triggerStart) {
-      setVisible(true);
-    } else {
-      setVisible(false);
-    }
-  });
+  const visible = useScrollReveal(450, 670, 400, 520);
 
   return (
     <div className="w-full lg:w-auto flex-shrink-0">
       <motion.div
-        ref={ref}
         initial={{ opacity: 0, x: -100 }}
         animate={
           visible
             ? {
                 opacity: 1,
                 x: 0,
-                transition: { duration: 0.6, ease: "easeOut" },
+                transition: { duration: 0.6, delay: 0.2, ease: "easeOut" },
               }
             : {
                 opacity: 0,

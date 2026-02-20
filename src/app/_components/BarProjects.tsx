@@ -1,28 +1,14 @@
 "use client";
 
-import { motion, useScroll, useMotionValueEvent } from "framer-motion";
-import { useState, useRef } from "react";
+import { motion } from "framer-motion";
+import { useScrollReveal } from "../../utils/useScrollReveal";
 
 export default function BarProjects() {
-  const ref = useRef(null);
-  const { scrollY } = useScroll();
-  const [visible, setVisible] = useState(false);
-
-  // Define o ponto de ativação (ajuste conforme seu layout)
-  const triggerStart = 1990; // px do topo da página
-
-  useMotionValueEvent(scrollY, "change", (latest) => {
-    if (latest > triggerStart) {
-      setVisible(true);
-    } else {
-      setVisible(false);
-    }
-  });
+  const visible = useScrollReveal(1612, 1986, 1150, 1500);
 
   return (
     <section className="flex flex-col mt-[2.5rem] items-center justify-center w-[95%] md:w-[90%] lg:w-[80%]">
       <motion.div
-        ref={ref}
         initial={{ opacity: 0 }}
         animate={
           visible

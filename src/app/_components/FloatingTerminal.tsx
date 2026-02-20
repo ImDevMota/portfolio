@@ -1,10 +1,11 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 type TerminalState = "normal" | "minimized" | "closed";
 
 export default function FloatingTerminal() {
   const [terminalState, setTerminalState] = useState<TerminalState>("normal");
+  const isFirstRender = useRef(true);
 
   const handleClose = () => {
     setTerminalState("closed");
@@ -20,12 +21,14 @@ export default function FloatingTerminal() {
 
   return (
     <motion.div
-      className="w-full lg:w-[40%] mt-[3rem] md:mt-[3rem] lg:mt-[0rem] relative h-[280px] sm:h-[300px] md:h-[320px] flex flex-col items-center justify-center"
+      className="w-full lg:w-[40%] mt-[3rem] md:mt-[3rem] lg:mt-[0rem] relative h-[360px] sm:h-[300px] md:h-[330px] flex flex-col items-center justify-center"
+      initial={{ y: 0 }}
       animate={{ y: [0, -15, 0] }}
       transition={{
         duration: 4,
         repeat: Infinity,
         ease: "easeInOut",
+        delay: 1.5,
       }}
     >
       {/* Placeholder - Only visible when terminal is CLOSED */}
@@ -66,6 +69,9 @@ export default function FloatingTerminal() {
               stiffness: 200,
               damping: 20,
             }}
+            onAnimationComplete={() => {
+              isFirstRender.current = false;
+            }}
             className="rounded-xl overflow-hidden shadow-2xl
                        bg-[#0c0c0c] border border-neutral-800/60
                        origin-center backdrop-blur-sm"
@@ -75,7 +81,7 @@ export default function FloatingTerminal() {
             }}
           >
             {/* Terminal Header */}
-            <div className="flex items-center gap-3 px-4 py-3 bg-[#141414] border-b border-neutral-800/50">
+            <div className="flex items-center gap-3 px-3 py-2 md:px-4 md:py-3 bg-[#141414] border-b border-neutral-800/50">
               <div className="flex gap-2">
                 {/* Close button (Red) */}
                 <button
@@ -121,7 +127,7 @@ export default function FloatingTerminal() {
               }}
               className="overflow-hidden bg-[#0a0a0a]"
             >
-              <div className="p-5 font-mono text-sm space-y-4 ">
+              <div className="p-3 md:p-5 font-mono text-xs md:text-sm space-y-2 md:space-y-4">
                 {/* Line 1: whoami */}
                 <div>
                   <p className="text-neutral-400">
@@ -131,21 +137,21 @@ export default function FloatingTerminal() {
                       whoami
                     </span>
                   </p>
-                  <p className="text-neutral-500 mt-1 pl-4">
-                    full-stack developer | technology enthusiast | voluntary in
-                    tech community
+                  <p className="text-neutral-500 mt-1 pl-3 md:pl-4">
+                    software engineer | full-stack | technology enthusiast |
+                    voluntary in tech community
                   </p>
                 </div>
 
                 {/* Line 2: cat mission.txt */}
-                <div className="mt-4">
+                <div className="mt-2 md:mt-4">
                   <p className="text-neutral-400">
                     <span className="text-red-500">➜</span>{" "}
                     <span className="text-red-800">~</span>{" "}
                     <span className="text-red-500">cat</span>{" "}
                     <span className="text-amber-500/80">mission.txt</span>
                   </p>
-                  <p className="text-neutral-500 mt-1 pl-4 leading-relaxed">
+                  <p className="text-neutral-500 mt-1 pl-3 md:pl-4 leading-relaxed">
                     Software engineering focused on high-impact technological
                     solutions. Specialist in backend development, systems
                     architecture and security, creating robust, scalable
@@ -154,7 +160,7 @@ export default function FloatingTerminal() {
                 </div>
 
                 {/* Final prompt line with blinking cursor */}
-                <div className="flex items-center mt-4 pb-1">
+                <div className="flex items-center mt-2 md:mt-4 pb-1 md:pb-2">
                   <span className="text-red-500">➜</span>{" "}
                   <span className="text-red-800 ml-1">~</span>
                   <motion.span

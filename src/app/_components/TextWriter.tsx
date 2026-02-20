@@ -6,11 +6,7 @@ export default function TypewriterText() {
   return (
     <div className=" flex text-2xl font-cascadia">
       <Typewriter
-        words={[
-          "Technolohy Enthusiast",
-          "Web Developer",
-          "Full-Stack Developer",
-        ]}
+        words={["Technolohy Enthusiast", "Software Engineer", "Full-Stack"]}
         loop={0} // 0 = infinito
         cursor
         cursorStyle={<span className="text-red-500 font-cascadia">|</span>}

@@ -8,40 +8,17 @@ import { SiPostgresql } from "react-icons/si";
 import { SiNextdotjs } from "react-icons/si";
 import { faJava } from "@fortawesome/free-brands-svg-icons";
 import { faNodeJs } from "@fortawesome/free-brands-svg-icons";
-import { motion, useScroll, useMotionValueEvent } from "framer-motion";
-import { useState, useRef } from "react";
+import { motion } from "framer-motion";
+import { useScrollReveal } from "../../utils/useScrollReveal";
 
 export default function BarTechStacks() {
-  const ref = useRef(null);
-  const { scrollY } = useScroll();
-  const [visibleCol1, setVisibleCol1] = useState(false);
-  const [visibleCol2, setVisibleCol2] = useState(false);
-
-  // Define o ponto de ativação (ajuste conforme seu layout)
-  const triggerStartCol1 = 1840; // px do topo da página
-  const triggerStartCol2 = 1990; // px do topo da página
-
-  useMotionValueEvent(scrollY, "change", (latest) => {
-    if (latest > triggerStartCol1) {
-      setVisibleCol1(true);
-    } else {
-      setVisibleCol1(false);
-    }
-  });
-
-  useMotionValueEvent(scrollY, "change", (latest) => {
-    if (latest > triggerStartCol2) {
-      setVisibleCol2(true);
-    } else {
-      setVisibleCol2(false);
-    }
-  });
+  const visibleCol1 = useScrollReveal(1012, 1830, 1350, 1460);
+  const visibleCol2 = useScrollReveal(1620, 1975, 1440, 1655);
 
   return (
-    <section className="flex flex-col mt-[2.5rem] gap-y-[1rem] items-center justify-center w-[95%] md:w-[90%] lg:w-[80%]">
-      <div className="grid grid-cols-2 md:grid-cols-4 w-full gap-2 md:gap-3">
+    <section className="flex flex-col mt-[2.5rem] gap-y-4 md:gap-y-5 items-center justify-center w-[95%] md:w-[90%] lg:w-[80%]">
+      <div className="grid grid-cols-2 md:grid-cols-4 w-full gap-4 md:gap-5">
         <motion.div
-          ref={ref}
           initial={{ opacity: 0, scale: 0.5 }}
           animate={
             visibleCol1
@@ -75,7 +52,6 @@ export default function BarTechStacks() {
         </motion.div>
 
         <motion.div
-          ref={ref}
           initial={{ opacity: 0, scale: 0.5 }}
           animate={
             visibleCol1
@@ -109,7 +85,6 @@ export default function BarTechStacks() {
         </motion.div>
 
         <motion.div
-          ref={ref}
           initial={{ opacity: 0, scale: 0.5 }}
           animate={
             visibleCol1
@@ -140,7 +115,6 @@ export default function BarTechStacks() {
         </motion.div>
 
         <motion.div
-          ref={ref}
           initial={{ opacity: 0, scale: 0.5 }}
           animate={
             visibleCol1
@@ -174,9 +148,8 @@ export default function BarTechStacks() {
         </motion.div>
       </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-4 w-full gap-2 md:gap-3">
+      <div className="grid grid-cols-2 md:grid-cols-4 w-full gap-4 md:gap-5">
         <motion.div
-          ref={ref}
           initial={{ opacity: 0, scale: 0.5 }}
           animate={
             visibleCol2
@@ -210,7 +183,6 @@ export default function BarTechStacks() {
         </motion.div>
 
         <motion.div
-          ref={ref}
           initial={{ opacity: 0, scale: 0.5 }}
           animate={
             visibleCol2
@@ -244,7 +216,6 @@ export default function BarTechStacks() {
         </motion.div>
 
         <motion.div
-          ref={ref}
           initial={{ opacity: 0, scale: 0.5 }}
           animate={
             visibleCol2
@@ -279,7 +250,6 @@ export default function BarTechStacks() {
         </motion.div>
 
         <motion.div
-          ref={ref}
           initial={{ opacity: 0, scale: 0.5 }}
           animate={
             visibleCol2

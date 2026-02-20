@@ -38,7 +38,7 @@ export default function Hero() {
             className="rounded-2xl "
           >
             <div className="flex flex-col">
-              <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold mb-4 text-center lg:text-left">
+              <h1 className="text-6xl md:text-5xl lg:text-7xl font-bold mb-4 text-center lg:text-left">
                 I'm <span className="text-red-700">Mota</span>
                 <br />
                 Developer

@@ -4,8 +4,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGraduationCap } from "@fortawesome/free-solid-svg-icons";
 import { faLaptopCode } from "@fortawesome/free-solid-svg-icons";
 import { faLayerGroup } from "@fortawesome/free-solid-svg-icons";
-import { motion, useScroll, useMotionValueEvent } from "framer-motion";
-import { useState } from "react";
+import { motion } from "framer-motion";
+import { useScrollReveal } from "../../utils/useScrollReveal";
 
 import { ActiveBar } from "../sections/SectionPortfolio";
 
@@ -33,19 +33,7 @@ export default function NavbarProjects({
 
   const inactiveStyleIcon = "mb-1 text-[1.3em] md:text-[1.5em]";
 
-  const { scrollY } = useScroll();
-  const [visible, setVisible] = useState(false);
-
-  // pontos de ativação — ajuste conforme o layout
-  const triggerStart = 1700; // onde começa o fade in
-
-  useMotionValueEvent(scrollY, "change", (latest) => {
-    if (latest > triggerStart) {
-      setVisible(true);
-    } else {
-      setVisible(false);
-    }
-  });
+  const visible = useScrollReveal(1400, 1660, 1090, 1250);
 
   return (
     <section className="flex flex-col items-center justify-center w-full">
