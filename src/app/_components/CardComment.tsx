@@ -4,7 +4,6 @@ import { useEffect, useState, FormEvent, ChangeEvent } from "react";
 import { motion } from "framer-motion";
 import { useInViewReveal } from "../../utils/useInViewReveal";
 import { FaGithub } from "react-icons/fa";
-import { supabase } from "../../libs/supabaseClient";
 
 interface Comment {
   id: number;
@@ -14,9 +13,12 @@ interface Comment {
   created_at: string;
 }
 
+type Status = "idle" | "loading" | "success" | "error";
+
 export default function CardContact() {
   const { ref, visible } = useInViewReveal(0.3);
   const [comments, setComments] = useState<Comment[]>([]);
+  const [status, setStatus] = useState<Status>("idle");
 
   const defaultPlaceholder = "Select your profile photo...";
   const [fileName, setFileName] = useState<string>(defaultPlaceholder);
@@ -41,21 +43,34 @@ export default function CardContact() {
     }
   };
 
+  const fileToBase64 = (file: File): Promise<string> => {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = () => resolve(reader.result as string);
+      reader.onerror = reject;
+      reader.readAsDataURL(file);
+    });
+  };
+
+  const fetchComments = async () => {
+    try {
+      const res = await fetch("/api/comments");
+      if (res.ok) {
+        const data = await res.json();
+        setComments(data as Comment[]);
+      }
+    } catch {
+      // silently fail on fetch
+    }
+  };
+
   useEffect(() => {
-    const fetchComments = async () => {
-      const { data, error } = await supabase
-        .from("comments")
-        .select("*")
-        .order("created_at", { ascending: false });
-
-      if (!error && data) setComments(data as Comment[]);
-    };
-
     fetchComments();
   }, []);
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setStatus("loading");
 
     const form = e.currentTarget;
     const nameInput = form.elements.namedItem("name") as HTMLInputElement;
@@ -68,35 +83,83 @@ export default function CardContact() {
     const message = messageInput.value.trim();
     const file = profileInput?.files?.[0];
 
-    if (!name || !message) return;
+    if (!name || !message) {
+      setStatus("idle");
+      return;
+    }
 
     let profile_url = "";
 
+    // Convert photo to Base64 data URI
     if (file) {
-      const fileName = `${Date.now()}_${file.name}`;
-      const { error: uploadError } = await supabase.storage
-        .from("profiles")
-        .upload(fileName, file);
-
-      if (!uploadError) {
-        const { data: publicUrl } = supabase.storage
-          .from("profiles")
-          .getPublicUrl(fileName);
-        profile_url = publicUrl.publicUrl;
+      try {
+        profile_url = await fileToBase64(file);
+      } catch {
+        // ignore photo conversion errors
       }
     }
 
-    const { error } = await supabase
-      .from("comments")
-      .insert([{ name, message, profile_url }]);
+    try {
+      const res = await fetch("/api/comments", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, message, profile_url }),
+      });
 
-    if (!error) {
+      if (!res.ok) throw new Error("Failed to submit comment.");
+
+      setStatus("success");
       form.reset();
-      const { data } = await supabase
-        .from("comments")
-        .select("*")
-        .order("created_at", { ascending: false });
-      if (data) setComments(data as Comment[]);
+      setFileName(defaultPlaceholder);
+      await fetchComments();
+      setTimeout(() => setStatus("idle"), 3000);
+    } catch {
+      setStatus("error");
+      setTimeout(() => setStatus("idle"), 3000);
+    }
+  };
+
+  const buttonContent = () => {
+    switch (status) {
+      case "loading":
+        return (
+          <span className="flex items-center gap-2">
+            <svg className="animate-spin h-5 w-5" viewBox="0 0 24 24">
+              <circle
+                className="opacity-25"
+                cx="12"
+                cy="12"
+                r="10"
+                stroke="currentColor"
+                strokeWidth="4"
+                fill="none"
+              />
+              <path
+                className="opacity-75"
+                fill="currentColor"
+                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"
+              />
+            </svg>
+            Sending...
+          </span>
+        );
+      case "success":
+        return "✓ Comment posted!";
+      case "error":
+        return "Error. Try again.";
+      default:
+        return "Submit";
+    }
+  };
+
+  const buttonColor = () => {
+    switch (status) {
+      case "success":
+        return "bg-gradient-to-r from-green-900 to-green-600";
+      case "error":
+        return "bg-gradient-to-r from-red-900 to-red-500";
+      default:
+        return "bg-gradient-to-r from-red-950 to-red-600 hover:to-red-800";
     }
   };
 
@@ -211,10 +274,11 @@ export default function CardContact() {
 
                 <button
                   type="submit"
-                  className="submit-btn text-[14px] md:text-[16px] mb-[0.5rem] mt-[0.2rem] py-[0.7rem] w-full font-bold rounded-lg bg-gradient-to-r from-red-950 to-red-600 hover:to-red-800 transition-all duration-300 hover:-translate-y-1 active:translate-y-0 flex items-center justify-center"
+                  disabled={status === "loading"}
+                  className={`submit-btn text-[14px] md:text-[16px] mb-[0.5rem] mt-[0.2rem] py-[0.7rem] w-full font-bold rounded-lg ${buttonColor()} transition-all duration-300 hover:-translate-y-1 active:translate-y-0 flex items-center justify-center disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:translate-y-0`}
                   id="submitBtn"
                 >
-                  Submit
+                  {buttonContent()}
                 </button>
               </form>
             </div>

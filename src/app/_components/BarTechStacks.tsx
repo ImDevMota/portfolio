@@ -15,8 +15,8 @@ import { motion } from "framer-motion";
 import { useScrollReveal } from "../../utils/useScrollReveal";
 
 export default function BarTechStacks() {
-  const visibleCol1 = useScrollReveal(1012, 1830, 1350, 1460);
-  const visibleCol2 = useScrollReveal(1620, 1975, 1440, 1655);
+  const visibleCol1 = useScrollReveal(1012, 1800, 1350, 1460);
+  const visibleCol2 = useScrollReveal(1620, 1875, 1440, 1655);
 
   return (
     <section className="flex flex-col mt-[2.5rem] gap-y-4 md:gap-y-5 items-center justify-center w-[95%] md:w-[90%] lg:w-[80%]">

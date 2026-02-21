@@ -39,7 +39,7 @@ export default function Hero() {
           >
             <div className="flex flex-col">
               <h1 className="text-6xl md:text-5xl lg:text-7xl font-bold mb-4 text-center lg:text-left">
-                I'm <span className="text-red-700">Mota</span>
+                I&apos;m <span className="text-red-700">Mota</span>
                 <br />
                 Developer
               </h1>
@@ -97,14 +97,14 @@ export default function Hero() {
           >
             <div className="flex flex-col sm:flex-row gap-2 mt-[1.8rem] w-full sm:w-auto">
               <a
-                href="#"
+                href="#portfolio"
                 className="py-3 px-8 sm:px-11 font-semibold rounded-md bg-gradient-to-r flex flex-row gap-x-2 items-center justify-center from-red-600 to-red-950"
               >
                 Projects
                 <FaCode />
               </a>
               <a
-                href="#"
+                href="#contact"
                 className="py-3 px-8 sm:px-11 font-semibold rounded-md border-1 border-red-950 flex flex-row gap-x-2 items-center justify-center"
               >
                 Contact

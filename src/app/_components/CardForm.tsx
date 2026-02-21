@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, FormEvent } from "react";
 import { motion } from "framer-motion";
 import { useInViewReveal } from "../../utils/useInViewReveal";
 import {
@@ -10,25 +11,109 @@ import {
   FaMapMarkerAlt,
 } from "react-icons/fa";
 
+type Status = "idle" | "loading" | "success" | "error";
+
 export default function CardForm() {
   const { ref, visible } = useInViewReveal(0.3);
+  const [status, setStatus] = useState<Status>("idle");
+  const [errorMsg, setErrorMsg] = useState("");
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setStatus("loading");
+    setErrorMsg("");
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    const body = {
+      name: formData.get("name") as string,
+      email: formData.get("email") as string,
+      subject: formData.get("subject") as string,
+      message: formData.get("message") as string,
+    };
+
+    try {
+      const res = await fetch("/api/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body),
+      });
+
+      if (!res.ok) {
+        const data = await res.json();
+        throw new Error(data.error || "Failed to send email.");
+      }
+
+      setStatus("success");
+      form.reset();
+      setTimeout(() => setStatus("idle"), 4000);
+    } catch (err: unknown) {
+      setErrorMsg(err instanceof Error ? err.message : "Failed to send email.");
+      setStatus("error");
+      setTimeout(() => setStatus("idle"), 4000);
+    }
+  };
+
+  const buttonContent = () => {
+    switch (status) {
+      case "loading":
+        return (
+          <span className="flex items-center gap-2">
+            <svg className="animate-spin h-5 w-5" viewBox="0 0 24 24">
+              <circle
+                className="opacity-25"
+                cx="12"
+                cy="12"
+                r="10"
+                stroke="currentColor"
+                strokeWidth="4"
+                fill="none"
+              />
+              <path
+                className="opacity-75"
+                fill="currentColor"
+                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"
+              />
+            </svg>
+            Sending...
+          </span>
+        );
+      case "success":
+        return "✓ Sent successfully!";
+      case "error":
+        return errorMsg || "Error. Try again.";
+      default:
+        return "Submit";
+    }
+  };
+
+  const buttonColor = () => {
+    switch (status) {
+      case "success":
+        return "bg-gradient-to-r from-green-900 to-green-600";
+      case "error":
+        return "bg-gradient-to-r from-red-900 to-red-500";
+      default:
+        return "bg-gradient-to-r from-red-950 to-red-600 hover:to-red-800";
+    }
+  };
 
   return (
     <div ref={ref}>
       <motion.div
-        initial={{ opacity: 0, y: 100 }} // começa invisível e 100px abaixo
+        initial={{ opacity: 0, y: 100 }}
         animate={
           visible
             ? {
                 opacity: 1,
                 y: 0,
                 transition: { duration: 0.6, delay: 0.4, ease: "easeOut" },
-              } // entra (de baixo pra cima)
+              }
             : {
                 opacity: 0,
                 y: 100,
                 transition: { duration: 0.6, ease: "easeIn" },
-              } // sai (pra baixo)
+              }
         }
         className="text-center w-full"
       >
@@ -42,6 +127,7 @@ export default function CardForm() {
               <form
                 id="contactForm"
                 className="flex flex-col w-full gap-y-[1rem]"
+                onSubmit={handleSubmit}
               >
                 <div className="flex flex-col sm:flex-row justify-between mt-[1rem] gap-4">
                   <div className="form-group flex flex-col items-start w-full sm:w-[36.5%]">
@@ -142,10 +228,11 @@ export default function CardForm() {
 
                 <button
                   type="submit"
-                  className="submit-btn text-[14px] md:text-[16px] mb-[0.5rem] mt-[0.2rem] py-[0.7rem] w-full font-bold rounded-lg bg-gradient-to-r from-red-950 to-red-600 hover:to-red-800 transition-all duration-300 hover:-translate-y-1 active:translate-y-0 flex items-center justify-center"
+                  disabled={status === "loading"}
+                  className={`submit-btn text-[14px] md:text-[16px] mb-[0.5rem] mt-[0.2rem] py-[0.7rem] w-full font-bold rounded-lg ${buttonColor()} transition-all duration-300 hover:-translate-y-1 active:translate-y-0 flex items-center justify-center disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:translate-y-0`}
                   id="submitBtn"
                 >
-                  Submit
+                  {buttonContent()}
                 </button>
               </form>
             </div>
@@ -161,8 +248,8 @@ export default function CardForm() {
                 <div className="flex items-center w-full mt-[1rem]">
                   <div className="flex text-start">
                     <h2 className="text-sm md:text-base">
-                      Is there something you'd like to discuss? Send me a
-                      private message and let's talk.
+                      Is there something you&apos;d like to discuss? Send me a
+                      private message and let&apos;s talk.
                     </h2>
                   </div>
                 </div>
@@ -176,7 +263,7 @@ export default function CardForm() {
                         className="mb-[0.2rem] flex-shrink-0"
                       />
                       <p className="text-[14px] md:text-[16px] break-all">
-                        thiago.you23@gmail.com
+                        thiago.motadev7@gmail.com
                       </p>
                     </div>
 

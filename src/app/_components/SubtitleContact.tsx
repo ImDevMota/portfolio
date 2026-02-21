@@ -25,7 +25,7 @@ export default function SubtitleContact() {
         }
         className="text-center mt-[-0.5rem] text-[15px]"
       >
-        <p>Let's connect! Drop me a message about anything.</p>
+        <p>Let&apos;s connect! Drop me a message about anything.</p>
       </motion.div>
     </div>
   );

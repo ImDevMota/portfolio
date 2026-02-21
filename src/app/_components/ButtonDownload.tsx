@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { useScrollReveal } from "../../utils/useScrollReveal";
 
 export default function ButtonDownload() {
-  const visible = useScrollReveal(850, 950, 650, 890);
+  const visible = useScrollReveal(810, 830, 650, 890);
 
   return (
     <div className="flex flex-col items-center justify-center">
